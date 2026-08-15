@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — 0xwi11iam</title>
+  <meta name="description" content="Six production-grade projects by William Jiang: Medusa, BreachBench, dd-rs, MacVault, crontastic, and macos-evilmaid." />
+  <meta name="theme-color" content="#0c0c0e" />
+  <meta property="og:title" content="Projects — 0xwi11iam" />
+  <meta property="og:description" content="AI red-teaming, offensive-security benchmarking, and hardened systems software." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="0xwi11iam — home">
+        <span class="prompt">~</span><span>0xwi11iam</span><span class="cursor" aria-hidden="true"></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a class="nav-cta" href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== Page hero ===================== -->
+    <section class="page-hero" aria-label="Projects introduction">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <span class="section-label reveal">/projects</span>
+        <h1 class="reveal" data-delay="1">The workbench.</h1>
+        <p class="lede reveal" data-delay="2">
+          Six tools I built to make security testing autonomous, benchmarks honest, and everyday
+          systems software harder to misuse. Every project is open source and production-grade.
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- ===================== 01 · MEDUSA ===================== -->
+      <article class="project-detail" id="medusa" aria-labelledby="medusa-title">
+        <aside class="detail-aside">
+          <span class="detail-number">01 · AI AGENTIC RED-TEAMING</span>
+          <h2 id="medusa-title">Medusa</h2>
+          <p class="detail-tagline">Autonomous Red &amp; Blue Teaming — Attack and Defend with AI</p>
+          <div class="detail-links">
+            <a class="btn btn-primary" href="https://github.com/0xwi11iam/Medusa" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+          </div>
+          <div class="detail-metrics">
+            <span class="metric"><strong>85</strong> tools</span>
+            <span class="metric"><strong>48</strong> modules</span>
+            <span class="metric"><strong>51</strong> attack skills</span>
+            <span class="metric"><strong>360</strong> tests</span>
+            <span class="metric"><strong>15</strong> lab vulns</span>
+          </div>
+        </aside>
+
+        <div class="detail-body">
+          <p>
+            Medusa is an open-source <strong>AI agentic red-teaming framework</strong> powered by LangGraph and a
+            Re-Act architecture. It represents a fundamental shift in how security testing is conducted — moving from
+            manual, time-consuming penetration testing to <strong>autonomous, AI-driven attack and defense</strong>.
+          </p>
+
+          <h3>The Red Team</h3>
+          <p>
+            The Red Team capability chains reconnaissance, exploitation, and post-exploitation into a single LangGraph
+            pipeline. It spawns <strong>parallel subagents</strong> that can simultaneously attack different vectors, all
+            coordinated by a zero-cost LLM supervisor that watches for missed flags, repeated patterns, and stalled
+            progress. A persistent knowledge graph is maintained across all agents, ensuring findings are shared and
+            built upon. Every engagement produces comprehensive Markdown reports with <strong>Mermaid attack-chain
+            diagrams</strong>, making results shareable and auditable.
+          </p>
+
+          <h3>The Blue Team SOC</h3>
+          <p>
+            Equally sophisticated is the Blue Team SOC, which monitors live HTTP traffic through
+            <strong>18 regex-based attack pattern detectors</strong> covering everything from SQL injection and XSS to
+            SSRF and command injection. Each endpoint gets a dedicated AI subagent that analyzes handler code and watches
+            traffic in real time. When attacks are detected, the AI decision engine deploys deception countermeasures:
+            live tarpit (adding real, measurable delays), network blocking via pfctl/iptables, and even
+            <strong>patching vulnerable source code</strong> by directly modifying the filesystem.
+          </p>
+
+          <h3>The Lab</h3>
+          <p>
+            The built-in CloudBoard Next lab features <strong>15 vulnerabilities across 3 services</strong>, forcing the
+            agent to chain attacks across services. The framework ships
+            with 85 tools, 48 modules, 51 attack skills, and 360 tests across 14 test files.
+          </p>
+
+          <ul class="detail-list">
+            <li><strong>Built for:</strong> bug bounty hunters automating recon across thousands of targets, researchers exploring novel attack paths, CTF players speed-running challenges, and SOC defenders needing autonomous active defense.</li>
+            <li><strong>Portable architecture:</strong> all paths resolve relative to project root, so the folder can be renamed without breaking anything.</li>
+            <li><strong>LLM providers:</strong> DeepSeek, HuggingFace, Gemini, and Anthropic.</li>
+            <li><strong>Interface:</strong> classic Rich TUI with a guided menu and live colored output for every command executed.</li>
+          </ul>
+
+          <div class="callout">
+            <span class="label">Engagement output</span>
+            <p>Markdown report + Mermaid attack-chain diagram. Reproducible, auditable, and shareable.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================== 02 · BREACHBENCH ===================== -->
+      <article class="project-detail" id="breachbench" aria-labelledby="breachbench-title">
+        <aside class="detail-aside">
+          <span class="detail-number">02 · LLM OFFENSIVE SECURITY BENCHMARK</span>
+          <h2 id="breachbench-title">BreachBench</h2>
+          <p class="detail-tagline">Execution. Not Theory.</p>
+          <div class="detail-links">
+            <a class="btn btn-primary" href="https://github.com/0xwi11iam/breachbench" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+          </div>
+          <div class="detail-metrics">
+            <span class="metric"><strong>836</strong> questions</span>
+            <span class="metric"><strong>29</strong> topics</span>
+            <span class="metric"><strong>8</strong> difficulty tiers</span>
+            <span class="metric"><strong>84</strong> lab vulns</span>
+            <span class="metric"><strong>11</strong> providers</span>
+            <span class="metric"><strong>80+</strong> ATT&amp;CK mappings</span>
+          </div>
+        </aside>
+
+        <div class="detail-body">
+          <p>
+            BreachBench is a <strong>production-grade benchmark for evaluating LLM offensive security capabilities</strong>.
+            Unlike existing benchmarks such as CyberSecEval, WMDP, and PurpleLlama — which test rote memorization of CVEs
+            and port numbers — BreachBench measures whether a model can <strong>actually execute attacks</strong>. It is
+            the only benchmark that tests the full kill chain, with real tools, against real targets.
+          </p>
+
+          <h3>Four-stage pipeline</h3>
+          <ul class="detail-list">
+            <li><strong>CONTROL</strong> (50 questions) — baseline competency: does the model understand security concepts?</li>
+            <li><strong>RECALL</strong> (50 questions) — breadth of knowledge: does it know obscure CVEs and edge cases?</li>
+            <li><strong>REASONING</strong> (50 questions) — multi-step attack chain reasoning: can it chain steps in order?</li>
+            <li><strong>LAB</strong> (100 questions) — the critical test: live exploitation against five deliberately vulnerable applications with full professional UIs.</li>
+          </ul>
+
+          <h3>Five live labs</h3>
+          <p>
+            The five labs — <strong>VaultStack</strong> (secrets management, 18 vulns), <strong>NetPulse</strong> (network
+            monitoring, 16 vulns), <strong>MedChain</strong> (healthcare EHR, 16 vulns), <strong>DevOpsForge</strong>
+            (CI/CD platform, 17 vulns), and <strong>FinClear</strong> (financial clearing, 17 vulns) — each contain a
+            flag.txt file accessible via exploitation. The model must read the app, identify a vulnerability, craft an
+            exploit, execute it, and capture the flag. No amount of memorization helps when facing a live GraphQL
+            injection on CloudBoard at port 5800.
+          </p>
+
+          <h3>Measurement that matters</h3>
+          <p>
+            BreachBench tracks <strong>token cost</strong> (per-provider pricing tables with real-time USD estimation),
+            <strong>latency percentiles</strong> (p50/p95/p99 per stage), and <strong>MITRE ATT&amp;CK framework
+            alignment</strong> (80+ tactic mappings). It generates confusion matrices per topic, identifying exactly where
+            a model excels and where it struggles. The persistent leaderboard tracks model improvement over time and
+            compares providers side-by-side on cost-efficiency — because a model scoring 85% at $0.03 per run is often
+            more valuable than one scoring 88% at $3.00.
+          </p>
+
+          <h3>Reproducibility by design</h3>
+          <p>
+            With 836 hand-crafted questions across 29 topics and 8 difficulty tiers, 11 providers supported natively
+            (plus any OpenAI-compatible API via the custom provider), Docker support for isolated lab execution, and a
+            professional web dashboard at :5100, BreachBench targets security researchers, red teams, AI safety teams,
+            model providers, and DevSecOps teams integrating it into CI/CD pipelines. Dry-run mode validates the full
+            pipeline without API calls, while fixed seeds, deterministic sampling, checkpoint/resume, and multi-format
+            exports (JSON + CSV + HTML) ensure reproducibility for academic publication and regression testing.
+          </p>
+
+          <div class="callout">
+            <span class="label">Why it exists</span>
+            <p>A model that memorizes CVE IDs is not an operator. BreachBench grades the only thing that matters: execution.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================== 03 · DD-RS ===================== -->
+      <article class="project-detail" id="dd-rs" aria-labelledby="dd-rs-title">
+        <aside class="detail-aside">
+          <span class="detail-number">03 · SAFE, MODERN DD REPLACEMENT</span>
+          <h2 id="dd-rs-title">dd-rs</h2>
+          <p class="detail-tagline">Never accidentally destroy a disk again.</p>
+          <div class="detail-links">
+            <a class="btn btn-primary" href="https://github.com/0xwi11iam/dd-rs" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+          </div>
+          <div class="detail-metrics">
+            <span class="metric"><strong>5</strong> safety layers</span>
+            <span class="metric"><strong>13+</strong> risk factors</span>
+            <span class="metric"><strong>16</strong> conversions</span>
+            <span class="metric"><strong>11</strong> I/O flags</span>
+            <span class="metric"><strong>1.5–3×</strong> GNU dd speed</span>
+          </div>
+        </aside>
+
+        <div class="detail-body">
+          <p>
+            dd-rs is a <strong>Rust+C reimplementation of the Unix dd command</strong> — the standard tool for copying
+            and converting data that has been destroying databases and SSDs since the 1970s. The original dd was designed
+            for 9-track tape drives with a 512-byte default block size, obscure key=value syntax, and zero safety
+            features. dd-rs reimagines it for the modern world with memory safety, performance optimizations, and
+            crucial safety guardrails.
+          </p>
+
+          <h3>The 5-layer safety system</h3>
+          <p>
+            Before opening any output file, dd-rs detects what you are targeting — a regular file, a block device
+            partition, a system disk, or an LVM volume. It checks whether the device is currently mounted and whether you
+            are targeting a system-critical path like /dev/sda, then computes a <strong>risk score from 13+ factors</strong>
+            (raw disk device +60, root filesystem target +50, block device partition +40). If the risk level is
+            <em>Caution</em> or higher, dd-rs prompts for confirmation. The --explain mode shows exactly what the command
+            will do, including the data flow and risk assessment.
+          </p>
+
+          <h3>Performance through tiered execution</h3>
+          <p>
+            For simple copies on Linux 4.5+, dd-rs uses <strong>copy_file_range(2)</strong> for zero-copy kernel
+            transfers, achieving 1.5–3× the speed of GNU dd. On macOS it uses fcopyfile(3). Copies needing conversions use
+            double-buffered read/write with read-ahead, overlapping I/O with CPU. The default block size is auto-tuned to
+            128 KiB, eliminating the millions of syscalls per second that plague GNU dd's 512-byte default. A visual
+            progress bar with speed and ETA is shown by default, and SIGUSR1 still provides on-demand statistics for
+            script compatibility.
+          </p>
+
+          <h3>Dual syntax</h3>
+          <p>
+            Legacy key=value syntax (<code>if=/dev/zero of=test.bin bs=1M count=100</code>) works exactly as expected, so
+            existing dd scripts run unchanged. Modern subcommands are also available:
+            <code>dd-rs copy input output</code>, <code>dd-rs zero disk.img --size 1G</code>,
+            <code>dd-rs random key.bin --bytes 32</code>, <code>dd-rs wipe /dev/sdb --passes 3</code>,
+            <code>dd-rs info /dev/sda</code>, and <code>dd-rs explain if=/dev/zero of=/dev/sda</code>.
+          </p>
+
+          <h3>Full compatibility</h3>
+          <p>
+            All <strong>16 conversions</strong> (ascii, ebcdic, ibm, block, unblock, lcase, ucase, swab, sync, sparse,
+            noerror, notrunc, excl, nocreat, fdatasync, fsync) and all <strong>11 I/O flags</strong> (append, direct,
+            directory, dsync, sync, nonblock, noatime, nocache, noctty, nofollow, fullblock) are supported. Size suffixes
+            range from the classic c, w, b to modern KiB, MiB, GiB, and even decimal suffixes like kB, MB, GB. Exit codes
+            match GNU dd exactly, and environment variables like POSIXLY_CORRECT and RUST_LOG provide fine-grained
+            control. dd-rs is written in memory-safe Rust with C used only for EBCDIC lookup tables — making it auditable
+            and secure.
+          </p>
+
+          <div class="callout">
+            <span class="label">Safety in numbers</span>
+            <p>Raw disk +60 · root filesystem +50 · partition +40. Score ≥ Caution ⇒ interactive confirmation. dd-rs asks before it writes.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================== 04 · MACVAULT ===================== -->
+      <article class="project-detail" id="macvault" aria-labelledby="macvault-title">
+        <aside class="detail-aside">
+          <span class="detail-number">04 · ENCRYPTED FILE STORE</span>
+          <h2 id="macvault-title">MacVault</h2>
+          <p class="detail-tagline">AES-256 at every layer. Zero trace when locked.</p>
+          <div class="detail-links">
+            <a class="btn btn-primary" href="https://github.com/0xwi11iam/MacVault" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+          </div>
+          <div class="detail-metrics">
+            <span class="metric"><strong>2×</strong> AES-256 layers</span>
+            <span class="metric"><strong>58</strong> commits</span>
+            <span class="metric"><strong>v1.0.19</strong> release</span>
+            <span class="metric"><strong>0</strong> daemons</span>
+            <span class="metric"><strong>0</strong> root required</span>
+          </div>
+        </aside>
+
+        <div class="detail-body">
+          <p>
+            MacVault is a <strong>portable encrypted file store for macOS and Linux</strong> that installs as an
+            innocuous system utility. It provides dual-layer AES-256 encryption: the underlying APFS (macOS) or LUKS
+            (Linux) sparsebundle image is encrypted, and the manifest tracking all files is encrypted with
+            <code>openssl enc -aes-256-cbc -pbkdf2</code>. When the vault is locked, there is zero trace of its contents —
+            no plaintext files, no metadata, nothing.
+          </p>
+
+          <h3>A workflow designed for simplicity</h3>
+          <p>
+            <code>mvs init</code> creates a new vault; <code>mvs open</code> unlocks and mounts it. Once open,
+            <code>mvs add ~/Documents/tax.pdf</code> moves files into the vault while preserving the illusion that files
+            remain in their original location. <code>mvs list</code> shows tracked files, <code>mvs show</code> restores
+            all files to their origin while preserving tracking, and <code>mvs hide</code> instantly re-hides everything
+            back into the vault. <code>mvs close</code> locks and unmounts the vault, leaving no trace.
+          </p>
+
+          <h3>Multiple vaults, one binary</h3>
+          <p>
+            Multi-vault support allows separate vaults for different purposes — work documents, personal files, projects —
+            each with its own passphrase. <code>mvs vault create/use/list</code> manages them, and each is an independent
+            encrypted sparsebundle with its own manifest. On macOS, passphrases are securely stored in the Keychain after
+            first use. The <code>disguise</code> command moves the vault to a stealthy system path like
+            <code>/Library/System/Extensions/.cache</code>, blending it in with system files.
+          </p>
+
+          <h3>Extensibility and auditability</h3>
+          <p>
+            A plugin system executes scripts on events: place executable scripts in <code>~/.mvs/plugins/</code> named
+            on-open, on-close, on-add, or on-remove, and they are invoked with relevant file paths. An encrypted,
+            append-only <strong>audit log</strong> records every operation (add, remove, hide, show, restore, open,
+            close) inside the vault, viewable with <code>mvs log</code>.
+          </p>
+
+          <ul class="detail-list">
+            <li><strong>Platforms:</strong> macOS natively; Linux requires cryptsetup and ext4, with automatic backend selection.</li>
+            <li><strong>Atomicity:</strong> atomic manifest writes prevent corruption on crash.</li>
+            <li><strong>Minimal footprint:</strong> no background daemon — it only runs when invoked, and requires no root privileges.</li>
+            <li><strong>Clean removal:</strong> the uninstall command restores everything and deletes the vault plus the binary.</li>
+          </ul>
+
+          <div class="callout">
+            <span class="label">Zero trace</span>
+            <p>Locked vault = encrypted sparsebundle + encrypted manifest. No plaintext files, no metadata, nothing to find.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================== 05 · CRONTASTIC ===================== -->
+      <article class="project-detail" id="crontastic" aria-labelledby="crontastic-title">
+        <aside class="detail-aside">
+          <span class="detail-number">05 · NATURAL LANGUAGE CRON</span>
+          <h2 id="crontastic-title">crontastic</h2>
+          <p class="detail-tagline">Write a human-readable sentence and the cron will still work.</p>
+          <div class="detail-links">
+            <a class="btn btn-primary" href="https://github.com/0xwi11iam/crontastic" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+          </div>
+          <div class="detail-metrics">
+            <span class="metric"><strong>250+</strong> NL patterns</span>
+            <span class="metric"><strong>7</strong> operators</span>
+            <span class="metric"><strong>8</strong> special strings</span>
+            <span class="metric"><strong>500</strong> /day warning</span>
+          </div>
+        </aside>
+
+        <div class="detail-body">
+          <p>
+            crontastic is a <strong>drop-in replacement for Vixie Cron that understands plain English</strong>. You type
+            <code>Every Tuesday at 10am /usr/local/bin/backup.sh</code> and it figures out the rest. Every classic cron
+            expression, operator, special string, and edge case is preserved — a true superset of Vixie Cron with no loss
+            of functionality.
+          </p>
+
+          <h3>A parser that speaks human</h3>
+          <p>
+            The natural-language parser handles over <strong>250 distinct patterns</strong>. It understands time of day
+            (10am, 2:30pm, noon, midnight, half past 3, quarter to 5, five past 7, ten to 8, 3 o'clock, 7 o'clock in the
+            evening, 11 at night, 3 in the morning, around 3pm, dawn, dusk, lunchtime, dinnertime, on the hour). It
+            handles days and dates (Monday, weekdays, weekends, business days, Monday and Wednesday, tomorrow, next
+            Tuesday, 1st, 15th, last day of month, first Monday of the month, January 1st). It understands frequencies
+            (every minute, every 5 minutes, every 4 hours, every 3 days, every 2 weeks, hourly, daily, weekly, monthly,
+            yearly, biweekly, quarterly, once a day, twice a day, 3 times a day). Even one-shot relative times work
+            (in 18 hours, in 30 minutes, 2 hours from now, after 5 minutes, in a few hours, in a couple of minutes).
+          </p>
+
+          <h3>Full cron compatibility</h3>
+          <p>
+            All classic cron features are supported: the full field format (minute, hour, day-of-month, month,
+            day-of-week), operators (*, comma, hyphen, slash, ?, L, W, #), day and month names, special strings (@reboot,
+            @yearly, @monthly, @weekly, @daily, @midnight, @hourly), and the day-of-month + day-of-week OR semantics. The
+            system crontab format (/etc/crontab) includes the username field after the schedule.
+          </p>
+
+          <h3>Built-in safety checks</h3>
+          <p>
+            Dangerous schedules that run more than ~500 times per day are flagged with a warning. Overlap detection checks
+            existing crontab entries for collisions at the same minute. Root warnings suggest using a non-privileged user,
+            and environment checks ensure PATH contains standard system directories, SHELL is set to a known shell, and
+            HOME is set and non-empty.
+          </p>
+
+          <h3>The toolchain</h3>
+          <p>
+            The --explain mode translates any schedule into English and shows the next five execution times. Cross-platform
+            support handles macOS and Linux with correct paths, shells, and defaults. The CLI includes subcommands for
+            edit (-e), list (-l), remove (-r), user targeting (-u), check, explain, classic output (-c), daemon mode (-d),
+            and stdin/file input. Daemon mode runs as a persistent scheduler, reading the crontab at startup and checking
+            every minute for jobs to execute.
+          </p>
+
+          <div class="callout">
+            <span class="label">The promise</span>
+            <p>"Every Tuesday at 10am" → <code>0 10 * * 2</code>. A superset of Vixie Cron — every classic expression still works.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================== 06 · MACOS-EVILMAID ===================== -->
+      <article class="project-detail" id="macos-evilmaid" aria-labelledby="evilmaid-title">
+        <aside class="detail-aside">
+          <span class="detail-number">06 · MACOS PRIVILEGE ESCALATION</span>
+          <h2 id="evilmaid-title">macos-evilmaid</h2>
+          <p class="detail-tagline">A lifesaving tool for people locked out of Macs they own.</p>
+          <div class="detail-links">
+            <a class="btn btn-primary" href="https://github.com/0xwi11iam/macos-evilmaid" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+          </div>
+          <div class="detail-metrics">
+            <span class="metric"><strong>:5500</strong> reverse shell</span>
+            <span class="metric"><strong>2</strong> documented paths</span>
+            <span class="metric"><strong>0</strong> admin password</span>
+            <span class="metric"><strong>0</strong> auth trace</span>
+          </div>
+        </aside>
+
+        <div class="detail-body">
+          <p>
+            macos-evilmaid documents a <strong>physical-access attack chain on macOS</strong> that can be used for either
+            legitimate liberation or malicious compromise, depending on the user. The technique exploits Recovery Mode's
+            unlimited privileges to install a backdoor that persists across reboots and provides root access.
+          </p>
+
+          <h3>The attack chain</h3>
+          <p>
+            Boot into Recovery Mode (⌘+R on Intel, hold the power button on Apple Silicon), run a simple shell script
+            from a USB drive, reboot normally, and connect to a reverse shell listening on port 5500. From the shell,
+            <code>dsenableroot</code> activates the root user with a password you control. The entire process takes
+            minutes and requires <strong>no admin password, no user interaction</strong>, and leaves no trace of
+            authentication.
+          </p>
+
+          <h3>What gets installed</h3>
+          <p>
+            The script installs a LaunchDaemon at <code>/Library/LaunchDaemons/com.apple.networkd.plist</code> that
+            masquerades as a legitimate Apple service. It creates a hidden payload directory at
+            <code>/private/var/tmp/.systemupdate/</code> containing the reverse-shell agent. The LaunchDaemon specifies
+            <code>UserName: root</code>, so the shell runs with full privileges before any user logs in — and before any
+            MDM policy enforcement begins. Recovery Mode runs underneath the installed OS, so MDM profiles, configuration
+            policies, and user restrictions simply do not exist in that environment.
+          </p>
+
+          <h3>Two paths, one technique</h3>
+          <ul class="detail-list">
+            <li><strong>Path 1 — The Locked-Out Owner:</strong> you own the Mac but are stuck as a standard user because an employer or school enrolled it in MDM, IT left without providing admin credentials, or you bought a second-hand Mac still MDM-bound.</li>
+            <li><strong>Path 2 — The Evil Maid:</strong> an attacker gains temporary physical access to a Mac they do not own. The README explicitly compares these paths, noting the legal and ethical distinctions.</li>
+          </ul>
+
+          <h3>Mitigations</h3>
+          <p>
+            A firmware password (Intel) or Secure Boot → Full Security (Apple Silicon) prevents booting into Recovery Mode
+            without authentication. FileVault full-disk encryption encrypts user data, though the OS volume itself is not
+            encrypted — combined with a firmware password, this is much stronger. MDM/endpoint monitoring can alert on new
+            LaunchDaemons or unexpected listening ports, but only after the fact. Physical security — locking the device
+            and never leaving it unattended — is the most effective control.
+          </p>
+
+          <h3>Detection for blue teams</h3>
+          <ul class="detail-list">
+            <li>Unexpected plist files in <code>/Library/LaunchDaemons/</code>, especially with Apple naming conventions.</li>
+            <li>Unexpected listening ports — <code>lsof -i :5500</code>.</li>
+            <li>Hidden directories under <code>/private/var/tmp/</code>.</li>
+            <li><code>dsenableroot</code> or <code>dscl</code> invocations in unified logs.</li>
+            <li>Sudden disappearance of MDM enrollment profiles.</li>
+          </ul>
+
+          <div class="callout">
+            <span class="label">The honest conclusion</span>
+            <p>Not a CVE-worthy vulnerability — a well-understood consequence of Apple's recovery architecture: physical access + no firmware password = game over.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="/">0xwi11iam_</a>
+      <p class="footer-meta">
+        William Jiang · Hong Kong ·
+        <a href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">github.com/0xwi11iam</a><br />
+        © <span data-year>2026</span> · Built with restraint, released responsibly.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

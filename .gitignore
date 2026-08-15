@@ -1,0 +1,141 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+.DS_Store?
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+.DocumentRevisions-V100
+.fseventsd
+.Metadata
+.SymbolicLink
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.com.apple.timemachine.supported
+
+# IDE / Editor
+.vscode/
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
+
+# Node.js (if using build tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+out/
+*.log
+*.cache
+*.tmp
+*.temp
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Generated files
+*.min.css
+*.min.js
+*.map
+*.bundle.js
+*.chunk.js
+*.generated.*
+
+# Backups and temp files
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+*.patch
+*.diff
+
+# Webpack, Parcel, or other bundlers
+.vite/
+.parcel-cache/
+.webpack/
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage directory (if using testing)
+coverage/
+.nyc_output/
+
+# Docker
+docker-compose.override.yml
+*.dockerignore
+
+# Database
+*.sqlite
+*.db
+*.sqlite3
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Project-specific temporary files
+/tmp
+/temp
+*.tmp.html
+*.test.html
+
+# SSL certificates
+*.pem
+*.crt
+*.key
+
+# IDE specific - macOS
+*.xcodeproj
+*.xcworkspace
+Podfile.lock
+Pods/
+
+# If using HTTP server with PHP
+*.sess_*
+
+# If using Git hooks
+.husky/
+.git-hooks/
+
+# If using Netlify
+.netlify/
+
+# If using Vercel
+.vercel/
+
+# If using Firebase
+.firebase/
+.firebaserc
+
+# If using AWS
+.aws/

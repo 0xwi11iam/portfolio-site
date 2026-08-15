@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>0xwi11iam — William Jiang · Security Researcher</title>
+  <meta name="description" content="William Jiang (0xwi11iam) is a security researcher, systems programmer, and AI red-teaming architect in Hong Kong. Every vulnerability discovered is a step towards a safer internet for everyone." />
+  <meta name="theme-color" content="#0c0c0e" />
+  <meta property="og:title" content="0xwi11iam — William Jiang" />
+  <meta property="og:description" content="Security researcher, systems programmer, AI red-teaming architect. Execution, not theory." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== Header ===================== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="0xwi11iam — home">
+        <span class="prompt">~</span><span>0xwi11iam</span><span class="cursor" aria-hidden="true"></span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="/" aria-current="page">Home</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a class="nav-cta" href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== Hero ===================== -->
+    <section class="hero" aria-label="Introduction">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="hero-kicker reveal">// security researcher · hong kong</p>
+            <h1 class="reveal" data-delay="1"><span class="name">William Jiang</span></h1>
+            <p class="hero-role reveal" data-delay="2">
+              <span data-typewriter="Security researcher|Systems programmer|AI red-teaming architect" class="typed">Security researcher</span><span class="caret" aria-hidden="true"></span>
+            </p>
+            <p class="hero-motto reveal" data-delay="3">
+              &ldquo;Every vulnerability discovered is a step towards <em>a safer internet</em> for everyone.&rdquo;
+            </p>
+            <div class="hero-actions reveal" data-delay="4">
+              <a class="btn btn-primary" href="/projects.html">Explore Projects <span aria-hidden="true">→</span></a>
+              <a class="btn btn-secondary" href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            </div>
+          </div>
+
+          <div class="hero-terminal reveal" data-delay="3">
+            <img class="hero-hamster" src="/assets/hamster.png" alt="Hamster mascot" width="400" height="400" loading="eager" />
+            <div class="terminal" data-terminal aria-label="Terminal-style introduction">
+              <div class="terminal-bar">
+                <div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span class="title">0xwi11iam@researcher — zsh</span>
+              </div>
+              <div class="terminal-body">
+                <span class="line"><span class="prompt">$</span> <span class="cmd">whoami</span></span>
+                <span class="line"><span class="out">william_jiang — 0xwi11iam · HK</span></span>
+                <span class="line"><span class="prompt">$</span> <span class="cmd">cat /etc/motd</span></span>
+                <span class="line"><span class="out quote">&ldquo;Every vulnerability discovered is a step</span></span>
+                <span class="line"><span class="out quote">towards a safer internet for everyone.&rdquo;</span></span>
+                <span class="line"><span class="prompt">$</span> <span class="cmd">./deploy --target production</span></span>
+                <span class="line"><span class="out ok">✓ 6 projects · 99 lab vulnerabilities</span></span>
+                <span class="line"><span class="out accent">➜ responsible disclosure, always.</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Stats ===================== -->
+    <section class="stats-band" aria-label="Key statistics">
+      <div class="container stats-grid">
+        <div class="stat reveal">
+          <div class="stat-value">6</div>
+          <div class="stat-label">Core projects</div>
+        </div>
+        <div class="stat reveal" data-delay="1">
+          <div class="stat-value">99</div>
+          <div class="stat-label">Lab vulnerabilities</div>
+        </div>
+        <div class="stat reveal" data-delay="2">
+          <div class="stat-value">836</div>
+          <div class="stat-label">Benchmark questions</div>
+        </div>
+        <div class="stat reveal" data-delay="3">
+          <div class="stat-value">85</div>
+          <div class="stat-label">Agent tools</div>
+        </div>
+        <div class="stat reveal" data-delay="4">
+          <div class="stat-value">360</div>
+          <div class="stat-label">Tests passing</div>
+        </div>
+        <div class="stat reveal" data-delay="5">
+          <div class="stat-value">250<span class="unit">+</span></div>
+          <div class="stat-label">NL cron patterns</div>
+        </div>
+        <div class="stat reveal" data-delay="5">
+          <div class="stat-value">51</div>
+          <div class="stat-label">Attack skills</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Projects ===================== -->
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">Portfolio</span>
+            <h2 id="projects-title">Projects that ship.</h2>
+          </div>
+          <p class="lede">Six production-grade tools spanning AI red-teaming, offensive-security benchmarking, and hardened systems software.</p>
+        </div>
+
+        <div class="filters reveal" role="group" aria-label="Filter projects by category">
+          <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" type="button" data-filter="ai" aria-pressed="false">AI / LLM</button>
+          <button class="filter-btn" type="button" data-filter="security" aria-pressed="false">Security</button>
+          <button class="filter-btn" type="button" data-filter="systems" aria-pressed="false">Systems</button>
+          <button class="filter-btn" type="button" data-filter="tools" aria-pressed="false">Tools</button>
+        </div>
+
+        <div class="project-grid">
+          <!-- MEDUSA -->
+          <article class="project-card reveal" data-categories="ai security">
+            <div class="card-top">
+              <span class="card-index">01 / MEDUSA</span>
+              <span class="card-lang">Python · LangGraph</span>
+            </div>
+            <h3 class="card-title">Medusa</h3>
+            <p class="card-tagline">Autonomous Red &amp; Blue Teaming — Attack and Defend with AI</p>
+            <p class="card-desc">An agentic red-teaming framework built on LangGraph and Re-Act. It chains recon, exploitation, and post-exploitation into one pipeline, while a Blue Team SOC defends live traffic with 18 attack-pattern detectors and AI-driven countermeasures.</p>
+            <div class="card-metrics">
+              <span class="metric"><strong>85</strong> tools</span>
+              <span class="metric"><strong>48</strong> modules</span>
+              <span class="metric"><strong>51</strong> skills</span>
+              <span class="metric"><strong>15</strong> vulns in lab</span>
+            </div>
+            <div class="card-tags">
+              <span class="tag">LangGraph</span>
+              <span class="tag purple">LLM agents</span>
+              <span class="tag green">Red &amp; Blue</span>
+              <span class="tag">Rich TUI</span>
+              <span class="tag">Mermaid reports</span>
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-ghost" href="https://github.com/0xwi11iam/Medusa" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+              <a class="card-link" href="/projects.html#medusa">Details</a>
+            </div>
+          </article>
+
+          <!-- BREACHBENCH -->
+          <article class="project-card reveal" data-delay="1" data-categories="ai security">
+            <div class="card-top">
+              <span class="card-index">02 / BREACHBENCH</span>
+              <span class="card-lang">Python · Docker</span>
+            </div>
+            <h3 class="card-title">BreachBench</h3>
+            <p class="card-tagline">Execution. Not Theory.</p>
+            <p class="card-desc">A production-grade benchmark that measures whether an LLM can actually execute the full kill chain against live targets — not recite CVEs. Four stages, five vulnerable labs, real tools, real flags.</p>
+            <div class="card-metrics">
+              <span class="metric"><strong>836</strong> questions</span>
+              <span class="metric"><strong>29</strong> topics</span>
+              <span class="metric"><strong>5</strong> labs</span>
+              <span class="metric"><strong>84</strong> vulns</span>
+            </div>
+            <div class="card-tags">
+              <span class="tag">LLM benchmark</span>
+              <span class="tag purple">MITRE ATT&amp;CK</span>
+              <span class="tag green">Live exploitation</span>
+              <span class="tag">11 providers</span>
+              <span class="tag">Dashboard</span>
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-ghost" href="https://github.com/0xwi11iam/breachbench" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+              <a class="card-link" href="/projects.html#breachbench">Details</a>
+            </div>
+          </article>
+
+          <!-- DD-RS -->
+          <article class="project-card reveal" data-delay="2" data-categories="systems tools">
+            <div class="card-top">
+              <span class="card-index">03 / DD-RS</span>
+              <span class="card-lang">Rust · C</span>
+            </div>
+            <h3 class="card-title">dd-rs</h3>
+            <p class="card-tagline">Never accidentally destroy a disk again.</p>
+            <p class="card-desc">A memory-safe reimplementation of Unix dd with a 5-layer safety system, zero-copy kernel transfers, and both legacy key=value syntax plus modern subcommands. Fast, auditable, and safe by default.</p>
+            <div class="card-metrics">
+              <span class="metric"><strong>13+</strong> risk factors</span>
+              <span class="metric"><strong>16</strong> conversions</span>
+              <span class="metric"><strong>1.5–3×</strong> faster</span>
+              <span class="metric"><strong>128 KiB</strong> auto block</span>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Rust</span>
+              <span class="tag purple">Safety guardrails</span>
+              <span class="tag">copy_file_range</span>
+              <span class="tag green">GNU-dd compatible</span>
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-ghost" href="https://github.com/0xwi11iam/dd-rs" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+              <a class="card-link" href="/projects.html#dd-rs">Details</a>
+            </div>
+          </article>
+
+          <!-- MACVAULT -->
+          <article class="project-card reveal" data-delay="3" data-categories="security tools">
+            <div class="card-top">
+              <span class="card-index">04 / MACVAULT</span>
+              <span class="card-lang">Shell · AES-256</span>
+            </div>
+            <h3 class="card-title">MacVault</h3>
+            <p class="card-tagline">AES-256 at every layer. Zero trace when locked.</p>
+            <p class="card-desc">A portable encrypted file store for macOS and Linux with dual-layer AES-256 encryption, multi-vault support, and a disguise mode. When locked, nothing remains — no plaintext, no metadata, no trace.</p>
+            <div class="card-metrics">
+              <span class="metric"><strong>2×</strong> AES-256 layers</span>
+              <span class="metric"><strong>58</strong> commits</span>
+              <span class="metric"><strong>v1.0.19</strong> stable</span>
+              <span class="metric"><strong>0</strong> traces when locked</span>
+            </div>
+            <div class="card-tags">
+              <span class="tag">AES-256</span>
+              <span class="tag purple">APFS / LUKS</span>
+              <span class="tag">Keychain</span>
+              <span class="tag green">Audit log</span>
+              <span class="tag">Plugins</span>
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-ghost" href="https://github.com/0xwi11iam/MacVault" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+              <a class="card-link" href="/projects.html#macvault">Details</a>
+            </div>
+          </article>
+
+          <!-- CRONTASTIC -->
+          <article class="project-card reveal" data-delay="4" data-categories="systems tools">
+            <div class="card-top">
+              <span class="card-index">05 / CRONTASTIC</span>
+              <span class="card-lang">C · Cron</span>
+            </div>
+            <h3 class="card-title">crontastic</h3>
+            <p class="card-tagline">Write a human-readable sentence and the cron will still work.</p>
+            <p class="card-desc">A drop-in replacement for Vixie Cron that understands plain English. Over 250 natural-language patterns map to classic cron expressions while preserving every operator, special string, and edge case.</p>
+            <div class="card-metrics">
+              <span class="metric"><strong>250+</strong> NL patterns</span>
+              <span class="metric"><strong>7</strong> operators</span>
+              <span class="metric"><strong>8</strong> special strings</span>
+              <span class="metric"><strong>--explain</strong> mode</span>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Natural language</span>
+              <span class="tag purple">Vixie superset</span>
+              <span class="tag">Daemon mode</span>
+              <span class="tag green">Safety checks</span>
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-ghost" href="https://github.com/0xwi11iam/crontastic" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+              <a class="card-link" href="/projects.html#crontastic">Details</a>
+            </div>
+          </article>
+
+          <!-- MACOS-EVILMAID -->
+          <article class="project-card reveal" data-delay="5" data-categories="security">
+            <div class="card-top">
+              <span class="card-index">06 / EVILMAID</span>
+              <span class="card-lang">Shell · macOS</span>
+            </div>
+            <h3 class="card-title">macos-evilmaid</h3>
+            <p class="card-tagline">A lifesaving tool for people locked out of Macs they own.</p>
+            <p class="card-desc">Documents a physical-access attack chain on macOS — and the mitigations that stop it. A LaunchDaemon masquerading as an Apple service persists root access across reboots, with full detection guidance for blue teams.</p>
+            <div class="card-metrics">
+              <span class="metric"><strong>1</strong> reverse shell</span>
+              <span class="metric"><strong>:5500</strong> listener</span>
+              <span class="metric"><strong>2</strong> documented paths</span>
+              <span class="metric"><strong>0</strong> admin password needed</span>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Recovery Mode</span>
+              <span class="tag purple">LaunchDaemon</span>
+              <span class="tag">Persistence</span>
+              <span class="tag green">Mitigations</span>
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-ghost" href="https://github.com/0xwi11iam/macos-evilmaid" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+              <a class="card-link" href="/projects.html#macos-evilmaid">Details</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Tech stack ===================== -->
+    <section class="section" id="stack" aria-labelledby="stack-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">Stack</span>
+            <h2 id="stack-title">The toolchain.</h2>
+          </div>
+          <p class="lede">Every layer chosen for a reason — memory safety, observability, portability, and speed.</p>
+        </div>
+
+        <div class="tech-showcase">
+          <div class="tech-item reveal"><span class="glyph">rs</span><span class="name">Rust</span><span class="hint">dd-rs</span></div>
+          <div class="tech-item reveal" data-delay="1"><span class="glyph">py</span><span class="name">Python</span><span class="hint">Medusa · BreachBench</span></div>
+          <div class="tech-item reveal" data-delay="2"><span class="glyph">c</span><span class="name">C</span><span class="hint">crontastic · dd-rs</span></div>
+          <div class="tech-item reveal" data-delay="3"><span class="glyph">sh</span><span class="name">Shell</span><span class="hint">MacVault · evilmaid</span></div>
+          <div class="tech-item reveal" data-delay="4"><span class="glyph">◈</span><span class="name">LangGraph</span><span class="hint">Medusa</span></div>
+          <div class="tech-item reveal" data-delay="5"><span class="glyph">▣</span><span class="name">Docker</span><span class="hint">BreachBench labs</span></div>
+          <div class="tech-item reveal"><span class="glyph">⌘</span><span class="name">MITRE ATT&amp;CK</span><span class="hint">80+ mappings</span></div>
+          <div class="tech-item reveal" data-delay="1"><span class="glyph">🔒</span><span class="name">AES-256</span><span class="hint">MacVault</span></div>
+          <div class="tech-item reveal" data-delay="2"><span class="glyph">◎</span><span class="name">APFS / LUKS</span><span class="hint">MacVault</span></div>
+          <div class="tech-item reveal" data-delay="3"><span class="glyph">▤</span><span class="name">Rich TUI</span><span class="hint">Medusa</span></div>
+          <div class="tech-item reveal" data-delay="4"><span class="glyph">⛓</span><span class="name">Mermaid</span><span class="hint">Attack chains</span></div>
+          <div class="tech-item reveal" data-delay="5"><span class="glyph">⬢</span><span class="name">LLM providers</span><span class="hint">DeepSeek · Gemini · Anthropic</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Philosophy ===================== -->
+    <section class="philosophy" id="philosophy" aria-labelledby="philosophy-title">
+      <div class="container">
+        <span class="section-label reveal">Philosophy</span>
+        <p class="motto reveal" data-delay="1" id="philosophy-title">
+          &ldquo;Every vulnerability discovered is a step towards <em>a safer internet</em> for everyone.&rdquo;
+        </p>
+        <p class="lead reveal" data-delay="2">
+          I don't break things for their own sake. I find the cracks before they are used against real people —
+          then I build tools that make powerful technology safe, accessible, and useful. Responsible disclosure
+          and ethical research drive everything I do.
+        </p>
+
+        <div class="pillars">
+          <div class="pillar reveal">
+            <span class="num">01</span>
+            <h3>Execution, not theory</h3>
+            <p>I ship benchmarks that run live exploits, not multiple-choice quizzes. If I can't demonstrate it against a real target, it doesn't count.</p>
+          </div>
+          <div class="pillar reveal" data-delay="1">
+            <span class="num">02</span>
+            <h3>Responsible disclosure</h3>
+            <p>My findings are documented, reproducible, and shared with defenders. Every attack path ships alongside the mitigations that close it.</p>
+          </div>
+          <div class="pillar reveal" data-delay="2">
+            <span class="num">03</span>
+            <h3>Tools that protect people</h3>
+            <p>From a dd that can't nuke your disk to a vault that leaves zero trace, I trade cleverness for real-world safety.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="/">0xwi11iam_</a>
+      <p class="footer-meta">
+        William Jiang · Hong Kong ·
+        <a href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">github.com/0xwi11iam</a><br />
+        © <span data-year>2026</span> · Built with restraint, released responsibly.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — 0xwi11iam</title>
+  <meta name="description" content="I'm William Jiang (0xwi11iam), a security researcher, systems programmer, and AI red-teaming architect based in Hong Kong." />
+  <meta name="theme-color" content="#0c0c0e" />
+  <meta property="og:title" content="About — 0xwi11iam" />
+  <meta property="og:description" content="Security researcher, systems programmer, AI red-teaming architect. Execution, not theory." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="0xwi11iam — home">
+        <span class="prompt">~</span><span>0xwi11iam</span><span class="cursor" aria-hidden="true"></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/about.html" aria-current="page">About</a></li>
+          <li><a class="nav-cta" href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== Page hero ===================== -->
+    <section class="page-hero" aria-label="About William Jiang">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <span class="section-label reveal">/about</span>
+        <h1 class="reveal" data-delay="1">The researcher.</h1>
+        <p class="lede reveal" data-delay="2">
+          I'm William Jiang — <strong>0xwi11iam</strong> — a security researcher, systems programmer, and
+          AI red-teaming architect based in Hong Kong. Deep technical expertise, applied with practical
+          problem-solving.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== About grid ===================== -->
+    <section class="section" aria-labelledby="story-title">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <span class="section-label">Story</span>
+          <h2 id="story-title" style="font-size: 2rem; margin-bottom: 1.5rem;">Execution, not theory.</h2>
+          <p>
+            I build tools that make powerful technology <strong>safe, accessible, and user-friendly</strong>.
+            My work sits at the intersection of offensive security and defensive engineering — the same hands
+            that automate red-team pipelines also ship the dd replacement that refuses to destroy your disk.
+          </p>
+          <p>
+            The through-line is my belief in <strong>responsible disclosure and ethical security research</strong>.
+            Every attack path I document ships alongside its mitigation. Every benchmark I publish exists to
+            make models safer, not just to score them. The goal is never the exploit for its own sake — it is
+            understanding the system deeply enough to protect the people who depend on it.
+          </p>
+          <p>
+            That philosophy shows up everywhere: Medusa's Blue Team SOC defends the same traffic the Red Team
+            attacks. BreachBench measures whether an LLM can <em>execute</em>, because memorization is not
+            capability. macos-evilmaid documents the attack so defenders can detect it. dd-rs and MacVault exist
+            to keep people from losing data in the first place.
+          </p>
+
+          <h3 style="margin-top: 2rem;">The motto</h3>
+          <p class="hero-motto" style="margin-top: 0.75rem;">
+            &ldquo;Every vulnerability discovered is a step towards <em>a safer internet</em> for everyone.&rdquo;
+          </p>
+        </div>
+
+        <aside class="profile-card reveal" data-delay="1" aria-label="Profile details">
+          <span class="section-label">Identity</span>
+          <h3 style="margin: 0.75rem 0 1rem;">0xwi11iam</h3>
+          <div class="profile-row"><span class="key">Name</span><span class="val">William Jiang</span></div>
+          <div class="profile-row"><span class="key">Handle</span><span class="val">0xwi11iam</span></div>
+          <div class="profile-row"><span class="key">Location</span><span class="val">Hong Kong</span></div>
+          <div class="profile-row"><span class="key">Focus</span><span class="val">Security research</span></div>
+          <div class="profile-row"><span class="key">Craft</span><span class="val">Systems programming</span></div>
+          <div class="profile-row"><span class="key">Specialty</span><span class="val">AI red-teaming</span></div>
+          <div class="profile-row"><span class="key">Principle</span><span class="val">Execution, not theory</span></div>
+          <div class="profile-row"><span class="key">Status</span><span class="val" style="color: var(--success);">● Active</span></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===================== Skills ===================== -->
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">Capabilities</span>
+            <h2 id="skills-title">What I work with.</h2>
+          </div>
+          <p class="lede">Languages and domains that span the full stack of offensive and defensive engineering.</p>
+        </div>
+
+        <div class="tech-showcase">
+          <div class="tech-item reveal"><span class="glyph">⌁</span><span class="name">AI red-teaming</span><span class="hint">Medusa</span></div>
+          <div class="tech-item reveal" data-delay="1"><span class="glyph">⛨</span><span class="name">LLM safety &amp; eval</span><span class="hint">BreachBench</span></div>
+          <div class="tech-item reveal" data-delay="2"><span class="glyph">▣</span><span class="name">Offensive security</span><span class="hint">Kill chain</span></div>
+          <div class="tech-item reveal" data-delay="3"><span class="glyph">⛊</span><span class="name">Systems programming</span><span class="hint">Rust · C</span></div>
+          <div class="tech-item reveal" data-delay="4"><span class="glyph">⌘</span><span class="name">Defensive engineering</span><span class="hint">SOC · detection</span></div>
+          <div class="tech-item reveal" data-delay="5"><span class="glyph">🔒</span><span class="name">Applied cryptography</span><span class="hint">AES-256</span></div>
+          <div class="tech-item reveal"><span class="glyph">⛓</span><span class="name">Agent orchestration</span><span class="hint">LangGraph</span></div>
+          <div class="tech-item reveal" data-delay="1"><span class="glyph">⌬</span><span class="name">Red &amp; blue teaming</span><span class="hint">Autonomous</span></div>
+        </div>
+
+        <h3 style="margin: 2.5rem 0 1rem; font-size: 1.4rem;">Languages in production</h3>
+        <div class="skill-list reveal">
+          <span class="metric"><strong>Rust</strong> · dd-rs</span>
+          <span class="metric"><strong>Python</strong> · Medusa, BreachBench</span>
+          <span class="metric"><strong>C</strong> · crontastic, dd-rs</span>
+          <span class="metric"><strong>Shell</strong> · MacVault, evilmaid</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Philosophy ===================== -->
+    <section class="philosophy" aria-labelledby="philosophy-title">
+      <div class="container">
+        <span class="section-label reveal">Philosophy</span>
+        <p class="motto reveal" data-delay="1" id="philosophy-title">
+          &ldquo;Every vulnerability discovered is a step towards <em>a safer internet</em> for everyone.&rdquo;
+        </p>
+        <p class="lead reveal" data-delay="2">
+          I don't break things for their own sake. I find the cracks before they are used against real people —
+          then I build the tools that close them. Responsible disclosure and ethical research drive everything I do.
+        </p>
+        <div class="pillars">
+          <div class="pillar reveal">
+            <span class="num">01</span>
+            <h3>Execution, not theory</h3>
+            <p>If I can't demonstrate it against a real target, it doesn't count. Proof, not promises.</p>
+          </div>
+          <div class="pillar reveal" data-delay="1">
+            <span class="num">02</span>
+            <h3>Responsible disclosure</h3>
+            <p>My attack paths ship with mitigations. My findings are reproducible, documented, and shared with defenders.</p>
+          </div>
+          <div class="pillar reveal" data-delay="2">
+            <span class="num">03</span>
+            <h3>Tools that protect</h3>
+            <p>I trade cleverness for real-world safety — from a dd that asks before it writes to a vault that leaves zero trace.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA ===================== -->
+    <section class="section" aria-label="Call to action">
+      <div class="container" style="text-align: center;">
+        <span class="section-label" style="justify-content: center;">Connect</span>
+        <h2 style="margin: 1rem 0;">See the work in full.</h2>
+        <p class="lead" style="max-width: 44ch; margin: 0 auto 1.5rem; color: var(--text-secondary);">
+          Six open-source projects, documented end to end — from attack chains to mitigation guidance.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a class="btn btn-primary" href="/projects.html">Explore Projects →</a>
+          <a class="btn btn-secondary" href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="/">0xwi11iam_</a>
+      <p class="footer-meta">
+        William Jiang · Hong Kong ·
+        <a href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">github.com/0xwi11iam</a><br />
+        © <span data-year>2026</span> · Built with restraint, released responsibly.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
