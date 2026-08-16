@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Post — 0xwi11iam</title>
+  <meta name="description" content="A post from the 0xwi11iam blog." />
+  <meta name="theme-color" content="#0c0c0e" />
+  <meta property="og:title" content="Post — 0xwi11iam" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="0xwi11iam — home">
+        <span class="prompt">~</span><span>0xwi11iam</span><span class="cursor" aria-hidden="true"></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/blog.html" aria-current="page">Blog</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/about.html#contact">Contact</a></li>
+          <li><a class="nav-cta" href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="section" aria-label="Blog post">
+      <div class="container">
+        <div class="article">
+          <div class="post-meta" id="meta" style="margin-bottom: 1.25rem;"></div>
+          <h1 class="post-title" id="title" style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 2rem;">Loading…</h1>
+          <div class="article-body" id="body"></div>
+          <p style="margin-top: 3rem;">
+            <a class="card-link" href="/blog.html">← Back to all posts</a>
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="/">0xwi11iam_</a>
+      <p class="footer-meta">
+        William Jiang · Hong Kong ·
+        <a href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">github.com/0xwi11iam</a><br />
+        © <span data-year>2026</span> · Built with restraint, released responsibly.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(location.search);
+      var slug = (params.get('slug') || '').replace(/[^a-z0-9-]/gi, '');
+      var titleEl = document.getElementById('title');
+      var metaEl = document.getElementById('meta');
+      var bodyEl = document.getElementById('body');
+
+      if (!slug) {
+        titleEl.textContent = 'Post not found';
+        return;
+      }
+
+      fetch('content/posts.json')
+        .then(function (r) { return r.json(); })
+        .then(function (posts) {
+          var meta = posts.filter(function (p) { return p.slug === slug; })[0];
+          if (!meta) throw new Error('missing');
+          document.title = (meta.title || 'Post') + ' — 0xwi11iam';
+          titleEl.textContent = meta.title || 'Untitled';
+
+          var bits = [];
+          if (meta.date) {
+            var d = new Date(meta.date + 'T00:00:00');
+            bits.push(isNaN(d) ? meta.date : d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+          }
+          if (meta.author) bits.push(meta.author);
+          metaEl.innerHTML = '';
+          bits.forEach(function (b) {
+            var span = document.createElement('span');
+            span.textContent = b;
+            metaEl.appendChild(span);
+          });
+
+          return fetch('content/posts/' + slug + '/index.md');
+        })
+        .then(function (r) {
+          if (!r || !r.ok) throw new Error('missing');
+          return r.text();
+        })
+        .then(function (md) {
+          if (window.marked) {
+            bodyEl.innerHTML = marked.parse(md);
+          } else {
+            var pre = document.createElement('pre');
+            pre.textContent = md;
+            bodyEl.appendChild(pre);
+          }
+          // Fix relative asset paths so images, videos, etc. resolve from the root /assets/ folder
+          var base = '/assets/';
+          bodyEl.querySelectorAll('img, video, source, audio').forEach(function (el) {
+            var val = el.getAttribute('src');
+            if (val && !val.match(/^(https?:|data:|#|\/)/i)) el.setAttribute('src', base + val);
+          });
+          bodyEl.querySelectorAll('a[href]').forEach(function (el) {
+            var val = el.getAttribute('href');
+            if (val && !val.match(/^(https?:|data:|#|\/|mailto:)/i)) el.setAttribute('href', base + val);
+          });
+
+          // Syntax-highlight code blocks (skip mermaid)
+          bodyEl.querySelectorAll('pre code').forEach(function (el) {
+            if (el.className && el.className.indexOf('language-mermaid') !== -1) return;
+            if (window.hljs) {
+              try { hljs.highlightElement(el); } catch (e) {}
+            }
+          });
+
+          // Render Mermaid diagrams
+          if (window.mermaid) {
+            mermaid.initialize({
+              startOnLoad: false,
+              securityLevel: 'loose',
+              theme: 'base',
+              themeVariables: {
+                fontFamily: "'SF Mono','Fira Code',Menlo,Consolas,monospace",
+                fontSize: '13px',
+                background: 'transparent',
+                primaryColor: '#1a1a1e',
+                primaryTextColor: '#e4e4e7',
+                primaryBorderColor: '#3b82f6',
+                lineColor: '#06b6d4',
+                secondaryColor: '#16161a',
+                tertiaryColor: '#16161a',
+                clusterBkg: 'rgba(26, 26, 30, 0.6)',
+                clusterBorder: '#3f3f46',
+                edgeLabelBackground: '#1a1a1e',
+                nodeTextColor: '#e4e4e7'
+              }
+            });
+            var mermaidCodes = bodyEl.querySelectorAll('pre code.language-mermaid');
+            Array.prototype.forEach.call(mermaidCodes, function (code) {
+              var pre = code.parentNode;
+              var container = document.createElement('div');
+              container.className = 'mermaid';
+              container.textContent = code.textContent;
+              if (pre && pre.tagName === 'PRE') pre.replaceWith(container);
+            });
+            var mermaidNodes = bodyEl.querySelectorAll('.mermaid');
+            if (mermaidNodes.length) {
+              mermaid.run({ nodes: Array.prototype.slice.call(mermaidNodes) }).catch(function () {});
+            }
+          }
+        })
+        .catch(function () {
+          titleEl.textContent = 'Post not found';
+          bodyEl.innerHTML = '<p>That post could not be loaded. <a href="/blog.html">Browse all posts</a>.</p>';
+        });
+    })();
+  </script>
+</body>
+</html>

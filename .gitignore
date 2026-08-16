@@ -133,6 +133,9 @@ Pods/
 # If using Vercel
 .vercel/
 
+# Reference site (not part of this project)
+raxaid-site/
+
 # If using Firebase
 .firebase/
 .firebaserc

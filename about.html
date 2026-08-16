@@ -13,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/styles/main.css" />
 </head>
@@ -29,10 +29,18 @@
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
           <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/blog.html">Blog</a></li>
           <li><a href="/about.html" aria-current="page">About</a></li>
+          <li><a href="/about.html#contact">Contact</a></li>
           <li><a class="nav-cta" href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
         </ul>
       </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
       <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -111,14 +119,14 @@
         </div>
 
         <div class="tech-showcase">
-          <div class="tech-item reveal"><span class="glyph">⌁</span><span class="name">AI red-teaming</span><span class="hint">Medusa</span></div>
-          <div class="tech-item reveal" data-delay="1"><span class="glyph">⛨</span><span class="name">LLM safety &amp; eval</span><span class="hint">BreachBench</span></div>
-          <div class="tech-item reveal" data-delay="2"><span class="glyph">▣</span><span class="name">Offensive security</span><span class="hint">Kill chain</span></div>
-          <div class="tech-item reveal" data-delay="3"><span class="glyph">⛊</span><span class="name">Systems programming</span><span class="hint">Rust · C</span></div>
-          <div class="tech-item reveal" data-delay="4"><span class="glyph">⌘</span><span class="name">Defensive engineering</span><span class="hint">SOC · detection</span></div>
-          <div class="tech-item reveal" data-delay="5"><span class="glyph">🔒</span><span class="name">Applied cryptography</span><span class="hint">AES-256</span></div>
-          <div class="tech-item reveal"><span class="glyph">⛓</span><span class="name">Agent orchestration</span><span class="hint">LangGraph</span></div>
-          <div class="tech-item reveal" data-delay="1"><span class="glyph">⌬</span><span class="name">Red &amp; blue teaming</span><span class="hint">Autonomous</span></div>
+          <div class="tech-item reveal"><span class="glyph"><img class="tech-logo" src="/assets/ai-redteam.png" alt="" /></span><span class="name">AI red-teaming</span><span class="hint">Medusa</span></div>
+          <div class="tech-item reveal" data-delay="1"><span class="glyph"><img class="tech-logo" src="/assets/llm-safety.png" alt="" /></span><span class="name">LLM safety &amp; eval</span><span class="hint">BreachBench</span></div>
+          <div class="tech-item reveal" data-delay="2"><span class="glyph"><img class="tech-logo" src="/assets/off-sec.png" alt="" /></span><span class="name">Offensive security</span><span class="hint">Kill chain</span></div>
+          <div class="tech-item reveal" data-delay="3"><span class="glyph"><img class="tech-logo" src="/assets/systems-programming.webp" alt="" /></span><span class="name">Systems programming</span><span class="hint">Rust · C</span></div>
+          <div class="tech-item reveal" data-delay="4"><span class="glyph"><img class="tech-logo" src="/assets/def-sec.png" alt="" /></span><span class="name">Defensive engineering</span><span class="hint">SOC · detection</span></div>
+          <div class="tech-item reveal" data-delay="5"><span class="glyph"><img class="tech-logo" src="/assets/cryptography.png" alt="" /></span><span class="name">Applied cryptography</span><span class="hint">AES-256</span></div>
+          <div class="tech-item reveal"><span class="glyph"><img class="tech-logo" src="/assets/agent-orchestration.png" alt="" /></span><span class="name">Agent orchestration</span><span class="hint">LangGraph</span></div>
+          <div class="tech-item reveal" data-delay="1"><span class="glyph"><img class="tech-logo" src="/assets/redteamblueteam.jpeg" alt="" /></span><span class="name">Red &amp; blue teaming</span><span class="hint">Autonomous</span></div>
         </div>
 
         <h3 style="margin: 2.5rem 0 1rem; font-size: 1.4rem;">Languages in production</h3>
@@ -162,17 +170,61 @@
       </div>
     </section>
 
-    <!-- ===================== CTA ===================== -->
-    <section class="section" aria-label="Call to action">
-      <div class="container" style="text-align: center;">
-        <span class="section-label" style="justify-content: center;">Connect</span>
-        <h2 style="margin: 1rem 0;">See the work in full.</h2>
-        <p class="lead" style="max-width: 44ch; margin: 0 auto 1.5rem; color: var(--text-secondary);">
-          Six open-source projects, documented end to end — from attack chains to mitigation guidance.
-        </p>
-        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-          <a class="btn btn-primary" href="/projects.html">Explore Projects →</a>
-          <a class="btn btn-secondary" href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
+    <!-- ===================== Contact ===================== -->
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">Contact</span>
+            <h2 id="contact-title">Let's talk.</h2>
+          </div>
+          <p class="lede">Security research, collaborations, responsible-disclosure reports, or just a good conversation about systems — my inbox is open.</p>
+        </div>
+
+        <div class="contact-grid">
+          <a class="contact-item reveal" href="mailto:jiangwilliam30@gmail.com">
+            <span class="contact-glyph" aria-hidden="true"><img class="contact-logo" src="/assets/gmail.webp" alt="" /></span>
+            <span class="contact-info">
+              <span class="contact-name">Email</span>
+              <span class="contact-value">jiangwilliam30@gmail.com</span>
+            </span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="contact-item reveal" data-delay="1" href="https://instagram.com/walliamjiang" target="_blank" rel="noopener noreferrer">
+            <span class="contact-glyph" aria-hidden="true"><img class="contact-logo" src="/assets/instragram.jpeg" alt="" /></span>
+            <span class="contact-info">
+              <span class="contact-name">Instagram</span>
+              <span class="contact-value">@walliamjiang</span>
+            </span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="contact-item reveal" data-delay="2" href="https://x.com/0xwi11iam" target="_blank" rel="noopener noreferrer">
+            <span class="contact-glyph" aria-hidden="true"><img class="contact-logo" src="/assets/x.png" alt="" /></span>
+            <span class="contact-info">
+              <span class="contact-name">X</span>
+              <span class="contact-value">@0xwi11iam</span>
+            </span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
+
+          <div class="contact-item reveal" data-delay="3">
+            <span class="contact-glyph" aria-hidden="true"><img class="contact-logo" src="/assets/discord.png" alt="" /></span>
+            <span class="contact-info">
+              <span class="contact-name">Discord</span>
+              <span class="contact-value">0xwi11iam</span>
+            </span>
+          </div>
+
+          <a class="contact-item reveal" data-delay="4" href="https://www.linkedin.com/in/william-jiang12" target="_blank" rel="noopener noreferrer">
+            <span class="contact-glyph" aria-hidden="true"><img class="contact-logo" src="/assets/linkedin.png" alt="" /></span>
+            <span class="contact-info">
+              <span class="contact-name">LinkedIn</span>
+              <span class="contact-value">linkedin.com/in/william-jiang12</span>
+            </span>
+            <span class="contact-arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </section>

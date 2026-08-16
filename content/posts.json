@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "hello-world",
+    "title": "Hello, world.",
+    "date": "2026-08-15",
+    "author": "0xwi11iam",
+    "excerpt": "The first post on the new blog. Security writeups, research notes, and things I break — responsibly."
+  },
+  {
+    "slug": "introduction-to-medusa",
+    "title": "Introduction to Medusa",
+    "date": "2026-08-16",
+    "author": "0xwi11iam",
+    "excerpt": "An introduction to Medusa, a powerful self-built tool I used to automate red-teaming and pentesting powered by SOTA AI models."
+  }  
+]

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — 0xwi11iam</title>
+  <meta name="description" content="Security writeups, research notes, and things I break — responsibly." />
+  <meta name="theme-color" content="#0c0c0e" />
+  <meta property="og:title" content="Blog — 0xwi11iam" />
+  <meta property="og:description" content="Security writeups, research notes, and things I break — responsibly." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="0xwi11iam — home">
+        <span class="prompt">~</span><span>0xwi11iam</span><span class="cursor" aria-hidden="true"></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/blog.html" aria-current="page">Blog</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/about.html#contact">Contact</a></li>
+          <li><a class="nav-cta" href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-label="Blog introduction">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container">
+        <span class="section-label reveal">/blog</span>
+        <h1 class="reveal" data-delay="1">Writeups &amp; notes.</h1>
+        <p class="lede reveal" data-delay="2">
+          Security writeups, research notes, and things I break — responsibly. 
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Blog posts">
+      <div class="container">
+        <div class="post-list" id="post-list">
+          <p style="color: var(--text-faint); padding: 2rem 0;">Loading posts…</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="/">0xwi11iam_</a>
+      <p class="footer-meta">
+        William Jiang · Hong Kong ·
+        <a href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">github.com/0xwi11iam</a><br />
+        © <span data-year>2026</span> · Built with restraint, released responsibly.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+  <script>
+    (function () {
+      var list = document.getElementById('post-list');
+      fetch('content/posts.json')
+        .then(function (r) { return r.json(); })
+        .then(function (posts) {
+          posts.sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
+          list.innerHTML = '';
+          if (!posts.length) {
+            list.innerHTML = '<p style="color: var(--text-faint); padding: 2rem 0;">No posts yet — check back soon.</p>';
+            return;
+          }
+          posts.forEach(function (p) {
+            var a = document.createElement('a');
+            a.className = 'post-item';
+            a.href = '/post.html?slug=' + encodeURIComponent(p.slug);
+            var d = new Date(p.date + 'T00:00:00');
+            var ds = isNaN(d) ? (p.date || '') : d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            var meta = document.createElement('div');
+            meta.className = 'post-meta';
+            var dateSpan = document.createElement('span');
+            dateSpan.textContent = ds;
+            meta.appendChild(dateSpan);
+            if (p.author) {
+              var authorSpan = document.createElement('span');
+              authorSpan.textContent = p.author;
+              meta.appendChild(authorSpan);
+            }
+
+            var title = document.createElement('h2');
+            title.className = 'post-title';
+            title.textContent = p.title || 'Untitled';
+
+            var excerpt = document.createElement('p');
+            excerpt.className = 'post-excerpt';
+            excerpt.textContent = p.excerpt || '';
+
+            a.appendChild(meta);
+            a.appendChild(title);
+            a.appendChild(excerpt);
+            list.appendChild(a);
+          });
+        })
+        .catch(function () {
+          list.innerHTML = '<p style="color: var(--text-faint); padding: 2rem 0;">Couldn\'t load posts — check <code>content/posts.json</code> for valid JSON (missing commas are the usual culprit).</p>';
+        });
+    })();
+  </script>
+</body>
+</html>
