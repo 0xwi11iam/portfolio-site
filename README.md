@@ -35,12 +35,3 @@ npx serve .
 
 Then visit `http://localhost:3000` — links like `/projects` and `/about` resolve correctly.
 
-## Deploy
-
-```bash
-vercel
-# or
-vercel --prod
-```
-
-No environment variables or build commands required.
