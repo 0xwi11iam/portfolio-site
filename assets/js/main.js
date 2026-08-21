@@ -264,7 +264,7 @@
       ls: function () {
         return [
           ['projects/', ''],
-          ['\u251c\u2500\u2500 medusa/', ''],
+          ['\u251c\u2500\u2500 suijin/', ''],
           ['\u251c\u2500\u2500 breachbench/', ''],
           ['\u251c\u2500\u2500 dd-rs/', ''],
           ['\u251c\u2500\u2500 macvault/', ''],
@@ -274,7 +274,7 @@
       },
       projects: function () {
         return [
-          ['medusa          autonomous red & blue teaming with AI', ''],
+          ['suijin          dual-mode autonomous security platform', ''],,
           ['breachbench     LLM offensive security benchmark', ''],
           ['dd-rs           safe, modern dd replacement', ''],
           ['macvault        encrypted file store', ''],

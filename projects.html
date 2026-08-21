@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects — 0xwi11iam</title>
-  <meta name="description" content="Six production-grade projects by William Jiang: Medusa, BreachBench, dd-rs, MacVault, crontastic, and macos-evilmaid." />
+  <meta name="description" content="Six production-grade projects by William Jiang: Suijin, BreachBench, dd-rs, MacVault, crontastic, and macos-evilmaid." />
   <meta name="theme-color" content="#0c0c0e" />
   <meta property="og:title" content="Projects — 0xwi11iam" />
   <meta property="og:description" content="AI red-teaming, offensive-security benchmarking, and hardened systems software." />
@@ -62,68 +62,106 @@
     </section>
 
     <div class="container">
-      <!-- ===================== 01 · MEDUSA ===================== -->
-      <article class="project-detail" id="medusa" aria-labelledby="medusa-title">
+      <!-- ===================== 01 · SUIJIN ===================== -->
+      <article class="project-detail" id="suijin" aria-labelledby="suijin-title">
         <aside class="detail-aside">
-          <span class="detail-number">01 · AI AGENTIC RED-TEAMING</span>
-          <h2 id="medusa-title">Medusa</h2>
-          <p class="detail-tagline">Autonomous Red &amp; Blue Teaming — Attack and Defend with AI</p>
+          <span class="detail-number">01 · DUAL-MODE AUTONOMOUS SECURITY</span>
+          <h2 id="suijin-title">Suijin</h2>
+          <p class="detail-tagline">Attack and Defend with AI — a security OS in your terminal</p>
           <div class="detail-links">
-            <a class="btn btn-primary" href="https://github.com/0xwi11iam/Medusa" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+            <a class="btn btn-primary" href="https://github.com/0xwi11iam/Suijin" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
           </div>
           <div class="detail-metrics">
-            <span class="metric"><strong>85</strong> tools</span>
-            <span class="metric"><strong>48</strong> modules</span>
-            <span class="metric"><strong>51</strong> attack skills</span>
-            <span class="metric"><strong>360</strong> tests</span>
-            <span class="metric"><strong>15</strong> lab vulns</span>
+            <span class="metric"><strong>262</strong> agent tools</span>
+            <span class="metric"><strong>123+</strong> tool packs</span>
+            <span class="metric"><strong>8</strong> labs</span>
+            <span class="metric"><strong>500+</strong> tests</span>
+            <span class="metric"><strong>AGPL</strong> v3.0</span>
           </div>
         </aside>
 
         <div class="detail-body">
           <p>
-            Medusa is an open-source <strong>AI agentic red-teaming framework</strong> powered by LangGraph and a
-            Re-Act architecture. It represents a fundamental shift in how security testing is conducted — moving from
-            manual, time-consuming penetration testing to <strong>autonomous, AI-driven attack and defense</strong>.
+            Suijin is a <strong>dual-mode autonomous security platform</strong>. The Red Team chains reconnaissance →
+            vulnerability discovery → exploitation → escalation → flag capture → reporting over a LangGraph state
+            machine, while the Blue Team monitors live HTTP traffic, detects attacks, and responds with deception,
+            blocking, and source patching. Both modes share <strong>one toolkit, one knowledge base, and one knowledge
+            graph</strong>. Intended for authorized security testing, education, and research only.
           </p>
 
           <h3>The Red Team</h3>
           <p>
-            The Red Team capability chains reconnaissance, exploitation, and post-exploitation into a single LangGraph
-            pipeline. It spawns <strong>parallel subagents</strong> that can simultaneously attack different vectors, all
-            coordinated by a zero-cost LLM supervisor that watches for missed flags, repeated patterns, and stalled
-            progress. A persistent knowledge graph is maintained across all agents, ensuring findings are shared and
-            built upon. Every engagement produces comprehensive Markdown reports with <strong>Mermaid attack-chain
-            diagrams</strong>, making results shareable and auditable.
+            A LangGraph-driven pipeline runs recon, vuln discovery, exploit, escalation, flag capture, and report
+            generation autonomously. It spawns <strong>parallel subagents</strong> (up to 3 concurrent) for multi-vector
+            attacks, coordinated by a <strong>zero-cost LLM supervisor</strong> that watches for loops, missed flags,
+            and stalled progress every 5 iterations — no API cost. A persistent knowledge graph is shared across all
+            agents, and every engagement produces Markdown reports with Mermaid attack-chain diagrams. A live command
+            box during runs supports /state, /note, /kb, /cost, /approvals, /scope, /audit, /sessions, /report, /pause,
+            and /panic.
           </p>
 
           <h3>The Blue Team SOC</h3>
           <p>
-            Equally sophisticated is the Blue Team SOC, which monitors live HTTP traffic through
-            <strong>18 regex-based attack pattern detectors</strong> covering everything from SQL injection and XSS to
-            SSRF and command injection. Each endpoint gets a dedicated AI subagent that analyzes handler code and watches
-            traffic in real time. When attacks are detected, the AI decision engine deploys deception countermeasures:
-            live tarpit (adding real, measurable delays), network blocking via pfctl/iptables, and even
-            <strong>patching vulnerable source code</strong> by directly modifying the filesystem.
+            Live traffic flows through <strong>18 regex-based attack pattern detectors</strong> — SQLi, XSS, SSRF, CMDi,
+            XXE, JWT, SSTI, deserialization, LDAP, NoSQL, scanner user-agents, mass assignment, auth bypass, brute
+            force, file inclusion, and GraphQL. Per-endpoint AI subagents analyze handler code in real time. When an
+            attack is detected, the decision engine deploys layered responses: <strong>tarpit</strong> (real,
+            measurable delays — 0.018s normal to 8.0s at threat score 10), <strong>network blocking</strong> via
+            pfctl/iptables, <strong>source code patching</strong> directly on the filesystem, and
+            <strong>honeypots</strong> (decoy admin users, canary API keys, phantom debug tokens). The first 25
+            requests build baseline profiles before the AI activates.
           </p>
 
-          <h3>The Lab</h3>
-          <p>
-            The built-in CloudBoard Next lab features <strong>15 vulnerabilities across 3 services</strong>, forcing the
-            agent to chain attacks across services. The framework ships
-            with 85 tools, 48 modules, 51 attack skills, and 360 tests across 14 test files.
-          </p>
-
+          <h3>Built-in labs</h3>
+          <p>Eight deliberately vulnerable Flask apps ship in the box, so nobody learns on real targets:</p>
           <ul class="detail-list">
-            <li><strong>Built for:</strong> bug bounty hunters automating recon across thousands of targets, researchers exploring novel attack paths, CTF players speed-running challenges, and SOC defenders needing autonomous active defense.</li>
-            <li><strong>Portable architecture:</strong> all paths resolve relative to project root, so the folder can be renamed without breaking anything.</li>
-            <li><strong>LLM providers:</strong> DeepSeek, HuggingFace, Gemini, and Anthropic.</li>
-            <li><strong>Interface:</strong> classic Rich TUI with a guided menu and live colored output for every command executed.</li>
+            <li><strong>cloud_iam_lab</strong> (:5900) — AWS IAM misconfigurations</li>
+            <li><strong>api_only_lab</strong> (:5901) — REST + GraphQL, BOLA, mass assignment</li>
+            <li><strong>oauth_lab</strong> (:5902) — OAuth 2.0 / OIDC misconfigurations</li>
+            <li><strong>log4shell_lab</strong> (:5903) — Log4j RCE</li>
+            <li><strong>wordpress_lab</strong> (:5904) — WordPress + vulnerable plugins</li>
+            <li><strong>ad_lab</strong> (:5905) — simulated AD DC, Kerberos, LDAP, SMB</li>
+            <li><strong>blue_target</strong> (:5906) — 25 endpoints, 15+ vuln classes</li>
+            <li><strong>devops_dashboard</strong> (:5700) — hard RCE, multi-step chain required</li>
           </ul>
 
+          <h3>A modular security OS</h3>
+          <p>
+            Suijin is rebuilt as a modular operating system for security automation: a <strong>kernel</strong> of 12
+            stdlib-only subsystems (contracts, context, events, registry, controller, jobs, vfs, security, config,
+            health, journal, errors), a <strong>Core tier</strong> that cannot be disabled, a
+            <strong>Recommended tier</strong> of disableable modules, and an <strong>Installed tier</strong> of
+            community modules discovered on every boot. Modules are one folder — plugin.json plus register(ctx),
+            start(ctx), stop(ctx) — managed through a Textual TUI.
+          </p>
+
+          <h3>Extensibility in four rungs</h3>
+          <ul class="detail-list">
+            <li><strong>Skill</strong> — drop a markdown file, it boots into the agent's prompt. 30 seconds.</li>
+            <li><strong>Addon</strong> — plain functions, auto-registered as agent tools. 2 minutes.</li>
+            <li><strong>Pack</strong> — scaffolded tools + skill doc + kernel unit. 5 minutes.</li>
+            <li><strong>Module</strong> — full lifecycle with dependencies, versioning, overrides.</li>
+          </ul>
+
+          <h3>The offline knowledge base</h3>
+          <p>
+            <code>suijin pull kb</code> downloads and indexes HackTricks, GTFOBins, PayloadsAllTheThings, LOLBAS,
+            OWASP Cheat Sheets, and SecLists (~300 MB) into a local sqlite3 store with FTS5 and BM25-ranked search.
+            KB-powered tools — suggest_exploit, find_wordlist, extract_payloads, kb_stats, mine_failures,
+            anonymize_report — all work <strong>offline, with no API key</strong>.
+          </p>
+
+          <h3>Governance &amp; ops</h3>
+          <p>
+            A policy engine blocks dangerous patterns before the agent hits enter, scope controls enforce Burp-style
+            target boundaries, and HITL approvals gate destructive actions. Credentials live in a PBKDF2-HMAC-SHA256
+            encrypted vault, provider failover rolls to the next LLM provider on hard failure, and cost guardrails
+            enforce alert, budget, and hard-cap limits in USD.
+          </p>
+
           <div class="callout">
-            <span class="label">Engagement output</span>
-            <p>Markdown report + Mermaid attack-chain diagram. Reproducible, auditable, and shareable.</p>
+            <span class="label">One command</span>
+            <p>curl -fsSL https://raw.githubusercontent.com/0xwi11iam/Suijin/main/install.sh | bash</p>
           </div>
         </div>
       </article>

@@ -1,16 +1,9 @@
 [
   {
-    "slug": "hello-world",
-    "title": "Hello, world.",
-    "date": "2026-08-15",
+    "slug": "announcing-suijin",
+    "title": "Announcing Suijin",
+    "date": "2026-08-21",
     "author": "0xwi11iam",
-    "excerpt": "The first post on the new blog. Security writeups, research notes, and things I break — responsibly."
-  },
-  {
-    "slug": "introduction-to-medusa",
-    "title": "Introduction to Medusa",
-    "date": "2026-08-16",
-    "author": "0xwi11iam",
-    "excerpt": "An introduction to Medusa, a powerful self-built tool I used to automate red-teaming and pentesting powered by SOTA AI models."
-  }  
+    "excerpt": "Meet Suijin — a dual-mode autonomous security platform where an AI red team attacks and an AI blue team defends, sharing one toolkit, one knowledge graph, and one knowledge base."
+  }
 ]
