@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suijin — the autonomous red team · 0xwi11iam</title>
+  <meta name="description" content="Suijin is an open-source autonomous red teaming and web app pentesting framework: a LangGraph multi-agent mesh with terminal-verified POCs, 155 snap-in tool modules, an Operator Console TUI, a built-in vulnerable lab, and a Kali sandbox mode. By William Jiang (0xwi11iam)." />
+  <meta name="theme-color" content="#0c0c0e" />
+  <meta property="og:title" content="Suijin — the autonomous red team" />
+  <meta property="og:description" content="Your team of fully autonomous web app pentesters and red teamers for any situation. Terminal-verified POCs, session mesh, 155 tool modules." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/styles/main.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== Header ===================== -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="0xwi11iam — home">
+        <span class="prompt">~</span><span>0xwi11iam</span><span class="cursor" aria-hidden="true"></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a class="nav-suijin" href="/suijin.html" aria-current="page">Suijin</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/blog.html">Blog</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/about.html#contact">Contact</a></li>
+          <li><a class="nav-cta" href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== Page hero ===================== -->
+    <section class="page-hero" aria-label="Suijin introduction">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container suijin-hero-inner">
+        <div>
+          <span class="section-label reveal">// flagship project</span>
+          <h1 class="reveal" data-delay="1">Suijin</h1>
+          <p class="lede reveal" data-delay="2">
+            Your team of <strong>fully autonomous web app pentesters and red teamers</strong> for any situation.
+            Tell it what to test — Suijin maps the product landscape, spawns the right specialists for each
+            vulnerability class, discusses attack surfaces with the other sessions, shares confirmed findings
+            with the team automatically, and <em>gets hacking</em> — while you supervise everything from a
+            single Operator Console. For authorized testing, bug bounty, CTFs, and research.
+          </p>
+          <div class="badge-row reveal" data-delay="3">
+            <span class="badge accent">v7.2.0</span>
+            <span class="badge">AGPL-3.0</span>
+            <span class="badge">Python 3.10+</span>
+            <span class="badge accent">LangGraph</span>
+            <span class="badge green">on PyPI</span>
+          </div>
+          <div class="hero-actions reveal" data-delay="4">
+            <a class="btn btn-primary" href="https://github.com/0xwi11iam/Suijin" target="_blank" rel="noopener noreferrer">Star on GitHub ↗</a>
+            <a class="btn btn-secondary" href="#install">Install Suijin</a>
+            <a class="btn btn-ghost" href="/post.html?slug=announcing-suijin">Read the announcement →</a>
+          </div>
+        </div>
+        <div class="mascot-frame reveal" data-delay="3">
+          <img src="/assets/sui.png" alt="Sui — the Suijin pixel-art mascot" width="660" height="640" loading="eager" />
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- ===================== Operator Console ===================== -->
+      <section class="sj-section" aria-labelledby="console-title">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">Operator Console</span>
+            <h2 id="console-title">Supervise the whole team from one seat.</h2>
+          </div>
+          <p class="lede">One command center instead of N terminals. Watch every agent think, spend, and confirm — then step in.</p>
+        </div>
+
+        <figure class="reveal">
+          <div class="showcase-frame">
+            <div class="terminal-bar">
+              <div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+              <span class="title">suijin operator — live engagement</span>
+            </div>
+            <img src="/assets/dashboard_demo.webp" alt="The Suijin Operator Console: ten autonomous agents mid-engagement with live phase, cost, and severity counters, a findings panel, and the mesh overview." width="2940" height="1912" loading="lazy" />
+          </div>
+          <figcaption class="showcase-caption">10 agents · 194 iterations · 4 confirmed findings · $0.12 total spend — one console.</figcaption>
+        </figure>
+
+        <p class="reveal" data-delay="1">
+          Every agent card shows its phase, iteration count, cost, and confirmed severities in real time. The command
+          line is keyboard-first: <code>/say</code> to talk to any agent mid-run, <code>/pause</code> to halt the team,
+          <code>/su 01637e</code> to impersonate an agent and drive it yourself, <code>/exploits</code> to list confirmed
+          POCs, <code>/tail</code> to follow an agent's live output, and <code>/report</code> to compile the engagement
+          on the spot. It is a pentest team you can not only watch but <strong>steer</strong>.
+        </p>
+      </section>
+    </div>
+
+    <!-- ===================== Stats ===================== -->
+    <section class="stats-band" aria-label="Suijin in numbers">
+      <div class="container stats-grid">
+        <div class="stat reveal">
+          <div class="stat-value">129<span class="unit">k</span></div>
+          <div class="stat-label">Lines of Python</div>
+        </div>
+        <div class="stat reveal" data-delay="1">
+          <div class="stat-value">155</div>
+          <div class="stat-label">Tool modules</div>
+        </div>
+        <div class="stat reveal" data-delay="2">
+          <div class="stat-value">262</div>
+          <div class="stat-label">Agent tools</div>
+        </div>
+        <div class="stat reveal" data-delay="3">
+          <div class="stat-value">171</div>
+          <div class="stat-label">Test files</div>
+        </div>
+        <div class="stat reveal" data-delay="4">
+          <div class="stat-value">508</div>
+          <div class="stat-label">Commits</div>
+        </div>
+        <div class="stat reveal" data-delay="5">
+          <div class="stat-value">20</div>
+          <div class="stat-label">Releases</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- ===================== Doctrine ===================== -->
+      <section class="sj-section" aria-labelledby="doctrine-title">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">The doctrine</span>
+            <h2 id="doctrine-title">Claims are cheap. Proof is not.</h2>
+          </div>
+        </div>
+
+        <blockquote class="pull-quote reveal" data-delay="1">
+          A finding only counts when its POC ran and the target produced the expected marker. <em>200&nbsp;OK proves nothing.</em>
+          <footer class="pull-quote-source">— Suijin's first principle</footer>
+        </blockquote>
+
+        <p class="reveal" data-delay="2">
+          Confirmed findings are stored as <strong>tamper-evident, content-addressed evidence</strong> that is re-hashed
+          at report-generation time, so a report can't claim anything the terminal didn't prove. And Suijin is
+          <strong>structurally refused from ending a run</strong> while whole surfaces are untested — a breadth watchdog
+          keeps it honest: <em>&ldquo;68% of your last actions target Search &amp; Redirectors. 5 product families
+          untested. Pick one.&rdquo;</em>
+        </p>
+      </section>
+
+      <!-- ===================== Why it's different ===================== -->
+      <section class="sj-section" aria-labelledby="compare-title">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">Why it's different</span>
+            <h2 id="compare-title">Not a chatbot with a shell.</h2>
+          </div>
+          <p class="lede">What changes when the framework — not the model — owns the discipline of an engagement.</p>
+        </div>
+
+        <div class="table-scroll reveal" data-delay="1">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" class="col-suijin">Suijin</th>
+                <th scope="col">Non-specialised agents</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Findings are</th>
+                <td class="col-suijin">terminal-verified POCs</td>
+                <td>model claims</td>
+              </tr>
+              <tr>
+                <th scope="row">Ending the run</th>
+                <td class="col-suijin">structurally refused while surfaces are untested</td>
+                <td>up to the model</td>
+              </tr>
+              <tr>
+                <th scope="row">Parallel agents</th>
+                <td class="col-suijin">a session mesh — lanes claim surfaces, dead ends are shared, targets stay isolated</td>
+                <td>separate chats</td>
+              </tr>
+              <tr>
+                <th scope="row">Confirmed findings</th>
+                <td class="col-suijin">auto-propagate to every peer via the blackboard</td>
+                <td>each agent hoards</td>
+              </tr>
+              <tr>
+                <th scope="row">Target coverage</th>
+                <td class="col-suijin">product-family landscape — &ldquo;1/10 families explored&rdquo;, told to rotate</td>
+                <td>one endpoint at a time</td>
+              </tr>
+              <tr>
+                <th scope="row">IDOR / access control</th>
+                <td class="col-suijin">deterministic, from accumulated evidence — the system surfaces what the data already shows</td>
+                <td>the model has to notice</td>
+              </tr>
+              <tr>
+                <th scope="row">Sub-agents</th>
+                <td class="col-suijin">vuln-class specialists — 9 profiles: idor, injection, ssrf, authn&hellip;</td>
+                <td>general workers</td>
+              </tr>
+              <tr>
+                <th scope="row">Dead credentials</th>
+                <td class="col-suijin">scrubbed on resume — verified-dead keys can't reappear</td>
+                <td>carried forever</td>
+              </tr>
+              <tr>
+                <th scope="row">Dead ends</th>
+                <td class="col-suijin">remembered across engagements</td>
+                <td>re-tried tomorrow</td>
+              </tr>
+              <tr>
+                <th scope="row">The operator</th>
+                <td class="col-suijin">one command center — pause, steer, impersonate any agent</td>
+                <td>N terminals</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===================== Feature grid ===================== -->
+      <section class="sj-section" aria-labelledby="features-title">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">The arsenal</span>
+            <h2 id="features-title">A team, not a tool.</h2>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card reveal">
+            <span class="feature-index">01</span>
+            <h3>Session mesh</h3>
+            <p>Parallel agents claim their own lanes, <strong>share dead ends</strong>, and stay isolated per target — one session's noise never poisons another's engagement.</p>
+          </div>
+          <div class="feature-card reveal" data-delay="1">
+            <span class="feature-index">02</span>
+            <h3>Blackboard propagation</h3>
+            <p>A confirmed finding lands on <strong>every peer's desk instantly</strong>. Nobody burns tokens re-exploiting a bug the team already owns.</p>
+          </div>
+          <div class="feature-card reveal" data-delay="2">
+            <span class="feature-index">03</span>
+            <h3>Landscape coverage</h3>
+            <p>Tracks the product-family landscape — <strong>&ldquo;1/10 families explored&rdquo;</strong> — and won't let the run wind down while surfaces sit untested.</p>
+          </div>
+          <div class="feature-card reveal" data-delay="3">
+            <span class="feature-index">04</span>
+            <h3>Evidence-driven IDOR</h3>
+            <p>The observation engine surfaces IDOR and access-control flaws <strong>deterministically</strong> from accumulated HTTP evidence — not by hoping the model notices.</p>
+          </div>
+          <div class="feature-card reveal" data-delay="4">
+            <span class="feature-index">05</span>
+            <h3>Vuln-class specialists</h3>
+            <p>Nine sub-agent profiles — <code>idor</code>, <code>injection</code>, <code>ssrf</code>, <code>authn</code> and more — each with its own doctrine for its class.</p>
+          </div>
+          <div class="feature-card reveal" data-delay="5">
+            <span class="feature-index">06</span>
+            <h3>Adversary personas</h3>
+            <p><code>ctf_player</code>, <code>qa_verifier</code>, <code>stealth_apt</code>, <code>script_kiddie</code>, <code>insider</code> — persona directives that rewrite engagement doctrine. The CTF profile's rule: <strong>THE FLAG IS THE OBJECTIVE</strong>.</p>
+          </div>
+          <div class="feature-card reveal">
+            <span class="feature-index">07</span>
+            <h3>Snapshot &amp; resume</h3>
+            <p>Engagements persist as <code>.sje</code> snapshots. Resume weeks later, and <strong>verified-dead credentials are scrubbed</strong> so they can't reappear.</p>
+          </div>
+          <div class="feature-card reveal" data-delay="1">
+            <span class="feature-index">08</span>
+            <h3>Offline knowledge base</h3>
+            <p><code>suijin pull kb</code> indexes HackTricks, GTFOBins, PayloadsAllTheThings, LOLBAS, OWASP and SecLists into SQLite FTS5 — <strong>full-knowledge offline, no API key</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== Architecture ===================== -->
+      <section class="sj-section" aria-labelledby="arch-title">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">Suijin OS</span>
+            <h2 id="arch-title">An operating system for security automation.</h2>
+          </div>
+          <p class="lede">Modules are lego bricks, the kernel is sacred, and the agent brain is a LangGraph state machine with a supervisor.</p>
+        </div>
+
+        <p class="reveal">
+          A <strong>kernel of 12 subsystems</strong> — contracts, context, events, registry, controller, jobs, vfs,
+          security, config, health, journal, errors — is kept <strong>stdlib-only</strong> by an AST scan plus
+          clean-interpreter import tests. Around it, <strong>155 manifest-declared modules</strong> snap in across three
+          tiers: <strong>core</strong> (boot-required), <strong>recommended</strong> (bundled, disableable), and
+          <strong>installed</strong> (community, discovered on boot). A boundary linter forbids cross-subsystem imports —
+          <em>a module that imports another subsystem at import time is welded, not snapped.</em>
+        </p>
+
+        <pre class="arch-tree reveal" data-delay="1" aria-label="Suijin architecture tree">
+suijin/
+├── <span class="k">kernel/</span>            <span class="c"># 12 subsystems · stdlib-only, AST-enforced</span>
+│   ├── <span class="d">controller</span>     <span class="c"># init system — the boot composition root</span>
+│   ├── <span class="d">events</span>        <span class="c"># IPC pub/sub with fault isolation</span>
+│   ├── <span class="d">registry</span>       <span class="c"># DAG resolution of module dependencies</span>
+│   ├── <span class="d">vfs</span>            <span class="c"># single file chokepoint, workspace-anchored</span>
+│   └── <span class="c">… contracts · context · jobs · security · config · health · journal</span>
+├── <span class="k">modules/</span>           <span class="c"># 155 snap-in modules · nmap, sqlmap, nuclei, metasploit…</span>
+│   ├── <span class="d">core/</span>         <span class="c"># boot-required</span>
+│   ├── <span class="d">recommended/</span>  <span class="c"># bundled, disableable</span>
+│   └── <span class="d">installed/</span>    <span class="c"># community — discovered on every boot</span>
+└── <span class="k">server/agent/lib/</span>  <span class="c"># the brain — LangGraph</span>
+    ├── <span class="d">agent_graph · supervisor</span>
+    ├── <span class="d">mesh</span>            <span class="c"># session mesh — cross-agent coordination</span>
+    ├── <span class="d">blackboard</span>      <span class="c"># shared confirmed findings</span>
+    ├── <span class="d">landscape</span>       <span class="c"># product-family coverage tracking</span>
+    └── <span class="d">drive_bandit</span>    <span class="c"># bandit-style action selection</span></pre>
+
+        <div class="callout reveal" data-delay="2">
+          <span class="label">The engineering story</span>
+          <p>
+            A Rust/PyO3 kernel core was built, proven byte-identical to the pure-Python implementation via a fuzz
+            oracle, then deliberately retired in v4.1 — the 61-unit boot DAG resolves in milliseconds, so the Rust
+            bought nothing but complexity. Technology choices are written up as ADRs (LangGraph over raw asyncio, JSON
+            knowledge graph over Neo4j by default), and CI runs a capability audit with a no-orphan-code gate.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================== Lab & box ===================== -->
+      <section class="sj-section" aria-labelledby="lab-title">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">Battle-ready</span>
+            <h2 id="lab-title">A target and a sandbox, in the box.</h2>
+          </div>
+        </div>
+
+        <div class="duo-grid">
+          <div class="feature-card reveal">
+            <span class="feature-index">suijin lab up</span>
+            <h3>NorthBridge — the onboard lab</h3>
+            <p>A 15-service vulnerable target behind a gateway/auth/core plane: <strong>100+ vulnerability
+            instances</strong>, cross-service attack chains, decoys, and 22 flags to capture. Nobody has to learn on
+            real targets.</p>
+          </div>
+          <div class="feature-card reveal" data-delay="1">
+            <span class="feature-index">suijin box</span>
+            <h3>The sealed Kali sandbox</h3>
+            <p>A sealed Kali Linux environment (OrbStack on macOS / Docker elsewhere) with one-way config sync, drift
+            detection, and a <strong>44-tool install manifest</strong> — Suijin and its tools run with your device
+            untouched.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== suijin-red ===================== -->
+      <section class="sj-section" aria-labelledby="red-title">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">suijin-red</span>
+            <h2 id="red-title">The red team as a CI citizen.</h2>
+          </div>
+        </div>
+
+        <p class="reveal">
+          A headless harness that runs full-fidelity Suijin engagements with <strong>zero human interaction</strong>:
+          <code>suijin-red run --target … --fail-on reproduced</code>. Exit code 1 means a reproduced finding — with
+          SARIF, JSON, and markdown artifacts plus a per-finding <code>reproduce.sh</code> evidence bundle, so your
+          pipeline fails the build on exactly what a defender needs to reproduce.
+        </p>
+      </section>
+
+      <!-- ===================== Install ===================== -->
+      <section class="sj-section" id="install" aria-labelledby="install-title">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">Install</span>
+            <h2 id="install-title">Ship it to your terminal.</h2>
+          </div>
+        </div>
+
+        <div class="install-block reveal" data-delay="1">
+          <span class="prompt">$</span>
+          <code>curl -fsSL https://raw.githubusercontent.com/0xwi11iam/Suijin/main/install.sh | bash</code>
+          <button class="copy-btn" type="button" data-copy="curl -fsSL https://raw.githubusercontent.com/0xwi11iam/Suijin/main/install.sh | bash">copy</button>
+        </div>
+        <div class="install-block reveal" data-delay="2">
+          <span class="prompt">$</span>
+          <code>pipx install suijin</code>
+          <button class="copy-btn" type="button" data-copy="pipx install suijin">copy</button>
+        </div>
+
+        <p class="reveal" data-delay="3">
+          Then take it for a spin: <code>suijin lab up</code> to boot NorthBridge, <code>suijin</code> to launch an
+          engagement, <code>suijin operator</code> to take the command seat.
+        </p>
+      </section>
+
+      <!-- ===================== Final CTA ===================== -->
+      <section class="sj-section" aria-labelledby="cta-title">
+        <div class="section-head reveal">
+          <div>
+            <span class="section-label">Open source</span>
+            <h2 id="cta-title">Built solo. Shipped free.</h2>
+          </div>
+          <p class="lede">AGPL-3.0, on GitHub and PyPI. If it earns a star, the hamster is thrilled.</p>
+        </div>
+
+        <div class="hero-actions reveal" data-delay="1">
+          <a class="btn btn-primary" href="https://github.com/0xwi11iam/Suijin" target="_blank" rel="noopener noreferrer">Star Suijin on GitHub ↗</a>
+          <a class="btn btn-secondary" href="https://pypi.org/project/suijin/" target="_blank" rel="noopener noreferrer">PyPI ↗</a>
+          <a class="btn btn-ghost" href="/post.html?slug=announcing-suijin">Read the announcement →</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="footer-brand" href="/">0xwi11iam_</a>
+      <p class="footer-meta">
+        William Jiang · Hong Kong ·
+        <a href="https://github.com/0xwi11iam" target="_blank" rel="noopener noreferrer">github.com/0xwi11iam</a><br />
+        © <span data-year>2026</span> · Built with restraint, released responsibly.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

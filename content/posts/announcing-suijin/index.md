@@ -6,27 +6,27 @@ Security testing, defense, and penetration testing today is completely broken. M
 
 The developer community's answer was fully autonomous AI agents. These agents are smart and work in theory, but come with massive caveats — they fall apart in the field.
 
-What if your red/blue team could run 24/7, adapt to what it finds, write dynamic exploits, write reports, defend your site, and find bug bounties all at the same time? What if you could snap the modules together like Lego to adapt to each and every scenario?
+What if a red team could run 24/7, adapt to what it finds, write dynamic exploits, write reports, and find bug bounties all at the same time? What if you could snap the modules together like Lego to adapt to each and every scenario?
 
 Meet Suijin.
 
 ## Introduction
 
-I'm William, the dev behind Suijin — a fully open-source, automatic, dual-mode offensive/defensive cybersecurity framework.
+I'm William, the dev behind Suijin — a fully open-source, fully autonomous red teaming framework.
 
 The Red Team is an AI agent powered by SOTA models that can autonomously do reconnaissance, save leaked credentials, and write and chain exploits — it thinks like a real red-teamer, finding vulnerabilities in your own software or chasing bug bounties on web apps and services.
 
-The Blue Team is a team of AI agents, like an SOC running in your terminal. It intelligently discerns between threats and normal requests and responds by deceiving the attacker, creating honeypots, and blocking the IP before they even have time to think.
+And it doesn't run alone — it runs as a session mesh: parallel agents claim their own attack surfaces, discuss findings with each other, and share every confirmed POC through one blackboard, so nobody re-exploits what the team already owns.
 
-Both teams share one toolkit, one knowledge graph, and one knowledge base. They run independently or together, all at the same time.
+Every agent shares one toolkit, one knowledge graph, and one knowledge base.
 
 ## What really sets us apart
 
-Most AI tools are paperweights when air-gapped or without an API key. Suijin can use its heuristic bypass and built-in knowledge base to defend or attack in an air-gapped environment.
+Most AI tools are paperweights when air-gapped or without an API key. Suijin can use its heuristic bypass and built-in knowledge base to keep hunting in an air-gapped environment.
 
 We've all seen what an AI agent does with too much autonomy. Suijin has built-in human governance, strict scope enforcement, cost caps, zero-cost supervisors that detect when something is going wrong, and a policy engine that catches dangerous patterns before the agent hits enter.
 
-The Red Team can attack and the Blue Team can defend in Suijin **Battle mode**, where you watch AI agents battle each other with live tarpitting, exploits, network blocks, and scripts — the closest thing to a real purple-teaming exercise you'll ever see on your own laptop.
+And you supervise all of it from the **Operator Console** — a command center where you watch every agent's phase and cost live, pause the team, talk to any agent, or impersonate one and drive it yourself.
 
 ## Inspiration
 
@@ -40,17 +40,17 @@ From that day onward, I began my work on Suijin — many days of planning, codin
 
 - **260+ agent tools** — nmap, sqlmap, gobuster, Metasploit, custom KB tools, and more
 - **Offline knowledge base** — HackTricks, GTFOBins, PayloadsAllTheThings, SecLists — all indexed with FTS5
-- **Built-in labs** — 8 deliberately vulnerable apps (SQLi, XSS, Log4j, SSTI, command injection, and more)
+- **Onboard lab** — NorthBridge: 15 services, ~100+ vulnerability instances, cross-service chains, and 22 flags
 - **Supervisor** — zero-cost pattern detector that catches loops, stalls, and missed flags with no LLM cost
-- **Battle mode** — red vs blue live, with scoring, tarpitting, network blocks, and battle reports
+- **Operator Console** — pause, steer, and impersonate any agent mid-run
 - **Modular OS architecture** — kernel + tiers + installable modules = extensible and maintainable
 - **HITL + governance** — human approvals, policy enforcement, scope controls, audit trails
 
-## Built-in labs
+## The onboard lab
 
-We didn't want you to learn on real targets. Suijin ships with 8 deliberately vulnerable Flask apps, including blue_target — a 25-endpoint app with SQLi, XSS, SSTI, command injection, IDOR, XXE, and more. Launch one, point Suijin at it, and watch the agent get to work.
+We didn't want you to learn on real targets. `suijin lab up` boots NorthBridge — a 15-service target behind a gateway/auth/core plane with ~100+ vulnerability instances, cross-service attack chains, decoys, and 22 flags. Point Suijin at it and watch the team get to work.
 
-It's the safest way to learn red teaming and blue teaming at the same time.
+It's the safest way to learn red teaming without touching anything real.
 
 ## Get started
 

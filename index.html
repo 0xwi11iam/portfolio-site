@@ -30,6 +30,7 @@
       <nav aria-label="Primary">
         <ul class="nav-links">
           <li><a href="/" aria-current="page">Home</a></li>
+          <li><a class="nav-suijin" href="/suijin.html">Suijin</a></li>
           <li><a href="/projects.html">Projects</a></li>
           <li><a href="/blog.html">Blog</a></li>
           <li><a href="/about.html">About</a></li>
@@ -84,7 +85,7 @@
                 <span class="line"><span class="out quote">&ldquo;Every vulnerability discovered is a step</span></span>
                 <span class="line"><span class="out quote">towards a safer internet for everyone.&rdquo;</span></span>
                 <span class="line"><span class="prompt">$</span> <span class="cmd">./deploy --target production</span></span>
-                <span class="line"><span class="out ok">✓ 6 projects · 99 lab vulnerabilities</span></span>
+                <span class="line"><span class="out ok">✓ 6 projects · 262 agent tools</span></span>
                 <span class="line"><span class="out accent">➜ responsible disclosure, always.</span></span>
                 <form class="terminal-form" autocomplete="off" aria-label="Interactive terminal">
                   <span class="prompt">$</span>
@@ -105,19 +106,19 @@
           <div class="stat-label">Core projects</div>
         </div>
         <div class="stat reveal" data-delay="1">
-          <div class="stat-value">99</div>
-          <div class="stat-label">Lab vulnerabilities</div>
+          <div class="stat-value">262</div>
+          <div class="stat-label">Agent tools</div>
         </div>
         <div class="stat reveal" data-delay="2">
+          <div class="stat-value">100<span class="unit">+</span></div>
+          <div class="stat-label">Lab vulnerabilities</div>
+        </div>
+        <div class="stat reveal" data-delay="3">
           <div class="stat-value">836</div>
           <div class="stat-label">Benchmark questions</div>
         </div>
-        <div class="stat reveal" data-delay="3">
-          <div class="stat-value">85</div>
-          <div class="stat-label">Agent tools</div>
-        </div>
         <div class="stat reveal" data-delay="4">
-          <div class="stat-value">360</div>
+          <div class="stat-value">500<span class="unit">+</span></div>
           <div class="stat-label">Tests passing</div>
         </div>
         <div class="stat reveal" data-delay="5">
@@ -134,6 +135,39 @@
     <!-- ===================== Projects ===================== -->
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="container">
+        <!-- Flagship spotlight -->
+        <div class="spotlight reveal" aria-label="Featured project: Suijin">
+          <div class="spot-copy">
+            <span class="chip-flagship"><span class="dot" aria-hidden="true"></span>Flagship project</span>
+            <h2>Suijin — the autonomous red team</h2>
+            <p class="spot-tagline">Your team of fully autonomous web app pentesters and red teamers for any situation.</p>
+            <p class="spot-desc">
+              Tell it what to test. Suijin maps the product landscape, spawns vulnerability-class specialists, shares
+              confirmed findings across a session mesh, and <strong>proves every finding by running the exploit</strong> —
+              while you supervise from a live Operator Console.
+            </p>
+            <div class="spot-metrics">
+              <span class="metric"><strong>262</strong> agent tools</span>
+              <span class="metric"><strong>155</strong> tool modules</span>
+              <span class="metric"><strong>129k</strong> lines of Python</span>
+              <span class="metric"><strong>500+</strong> tests</span>
+            </div>
+            <div class="spot-actions">
+              <a class="btn btn-primary" href="/suijin.html">Open the showcase <span aria-hidden="true">→</span></a>
+              <a class="btn btn-secondary" href="https://github.com/0xwi11iam/Suijin" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+          <a class="spot-shot" href="/suijin.html" aria-label="Open the Suijin showcase">
+            <div class="showcase-frame">
+              <div class="terminal-bar">
+                <div class="traffic" aria-hidden="true"><i></i><i></i><i></i></div>
+                <span class="title">suijin operator — live engagement</span>
+              </div>
+              <img src="/assets/dashboard_demo.webp" alt="The Suijin Operator Console: ten autonomous agents mid-engagement with live cost and severity counters." width="2940" height="1912" loading="lazy" />
+            </div>
+          </a>
+        </div>
+
         <div class="section-head reveal">
           <div>
             <span class="section-label">Portfolio</span>
@@ -158,25 +192,26 @@
               <span class="card-lang">Python · LangGraph</span>
             </div>
             <h3 class="card-title">Suijin</h3>
-            <p class="card-tagline">Dual-Mode Autonomous Security — Attack and Defend with AI</p>
-            <p class="card-desc">A security OS in your terminal. The AI Red Team chains recon to exploitation over a LangGraph state machine while the Blue Team SOC detects live attacks and fights back with tarpits, network blocks, and source patches. One toolkit, one knowledge graph, one offline knowledge base.</p>
+            <p class="card-tagline">The autonomous red team — a full pentest crew in your terminal</p>
+            <p class="card-desc">A security OS in your terminal. Tell it what to test — Suijin maps the product landscape, spawns vulnerability-class specialists, shares confirmed findings across a session mesh, and proves every finding by running the exploit.</p>
             <div class="card-metrics">
               <span class="metric"><strong>262</strong> agent tools</span>
-              <span class="metric"><strong>123+</strong> tool packs</span>
-              <span class="metric"><strong>8</strong> labs</span>
+              <span class="metric"><strong>155</strong> tool modules</span>
+              <span class="metric"><strong>100+</strong> lab vulns</span>
               <span class="metric"><strong>500+</strong> tests</span>
             </div>
             <div class="card-tags">
+              <span class="tag purple">★ Flagship</span>
               <span class="tag">LangGraph</span>
               <span class="tag purple">LLM agents</span>
-              <span class="tag green">Red &amp; Blue</span>
+              <span class="tag green">Verified POCs</span>
               <span class="tag">Offline KB</span>
               <span class="tag">Modular OS</span>
-              <span class="tag">Battle mode</span>
+              <span class="tag">Session mesh</span>
             </div>
             <div class="card-footer">
               <a class="btn btn-ghost" href="https://github.com/0xwi11iam/Suijin" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
-              <a class="card-link" href="/projects.html#suijin">Details</a>
+              <a class="card-link" href="/suijin.html">Showcase</a>
             </div>
           </article>
 

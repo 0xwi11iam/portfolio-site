@@ -41,6 +41,8 @@
       document.documentElement.setAttribute('data-theme', theme);
       themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
       themeToggle.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+      var metaTheme = document.querySelector('meta[name="theme-color"]');
+      if (metaTheme) metaTheme.setAttribute('content', theme === 'light' ? '#f7f7f8' : '#0c0c0e');
       try { localStorage.setItem('0xwi11iam-theme', theme); } catch (e) {}
     };
 
@@ -274,14 +276,15 @@
       },
       projects: function () {
         return [
-          ['suijin          dual-mode autonomous security platform', ''],,
+          ['suijin          the autonomous red team \u00b7 262 tools', ''],
           ['breachbench     LLM offensive security benchmark', ''],
           ['dd-rs           safe, modern dd replacement', ''],
           ['macvault        encrypted file store', ''],
           ['crontastic      natural language cron', ''],
           ['macos-evilmaid  macOS physical-access research', ''],
           ['', ''],
-          ['\u2192 open /projects for the full breakdown', 'out-dim']
+          ['\u2192 /suijin has the full showcase', 'out-dim'],
+          ['\u2192 /projects for the full breakdown', 'out-dim']
         ];
       },
       contact: function () {
@@ -374,6 +377,46 @@
       });
     });
   }
+
+  /* ---------- Copy buttons ---------- */
+  var copyBtns = document.querySelectorAll('[data-copy]');
+  copyBtns.forEach(function (btn) {
+    var label = btn.textContent;
+    var resetTimer = null;
+
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy') || '';
+      var done = function () {
+        btn.classList.add('is-copied');
+        btn.textContent = 'copied \u2713';
+        if (resetTimer) clearTimeout(resetTimer);
+        resetTimer = setTimeout(function () {
+          btn.classList.remove('is-copied');
+          btn.textContent = label;
+        }, 1600);
+      };
+
+      var fallbackCopy = function () {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'absolute';
+        ta.style.left = '-9999px';
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) {}
+        ta.remove();
+        if (ok) done();
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+    });
+  });
 
   /* ---------- Footer year ---------- */
   var yearEl = document.querySelector('[data-year]');
